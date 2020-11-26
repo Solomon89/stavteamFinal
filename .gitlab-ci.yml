@@ -1,5 +1,7 @@
 run:
+
   script:
+    - echo "hi"
     - cd /home/dmitry/back/
     - git fetch
     - gil pull
