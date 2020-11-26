@@ -1,0 +1,6 @@
+run:
+  script:
+    - cd /home/dmitry/back/
+    - git fetch
+    - gil pull
+    - systemctl restart stavteamback
