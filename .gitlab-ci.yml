@@ -2,7 +2,7 @@ run:
   script:
     - whoami  
     - cd /home/dmitry/back/
-    - sudo -H -u gitlab-runner bash -c 'echo "I am $USER, with uid $UID"'
-    - sudo -u dmitry git fetch 
+    - sudo -H -u dmitry bash -c 'echo "I am $USER, with uid $UID"'
+    - sudo -H -u dmitry git fetch 
     - gil pull git@stavteam2020.ddns.net:ld/stavteamback.git
     - systemctl restart stavteamback
