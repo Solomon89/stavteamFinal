@@ -1,7 +1,6 @@
 run:
 
   script:
-    - echo "hi"
     - unset cd /home/dmitry/back/
     - git fetch
     - gil pull
