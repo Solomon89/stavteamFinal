@@ -2,6 +2,6 @@ run:
   script:
     - whoami  
     - cd /home/dmitry/back/
-    - sudo git fetch
+    - git fetch
     - gil pull
     - systemctl restart stavteamback
