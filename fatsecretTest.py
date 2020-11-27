@@ -1,8 +1,7 @@
+from fatsecret import Fatsecret
 
 clientID = 'cbf61802962b4846a6b493d8cac33880'
-clientSecret = '5e03859dd82543c891331a172c630d7f'
-
-from fatsecret import Fatsecret
+clientSecret = '624f154d6b5d4a5581cafd0312996927'
 
 fs = Fatsecret(clientID, clientSecret)
 
@@ -13,5 +12,5 @@ print("Browse to the following URL in your browser to authorize access:\n{}".for
 pin = input("Enter the PIN provided by FatSecret: ")
 session_token = fs.authenticate(pin)
 
-foods = fs.foods_get_most_eaten()
-print("Most Eaten Food Results: {}".format(len(foods)))
+foods = fs.profile_get()
+print(foods)
