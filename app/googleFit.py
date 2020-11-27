@@ -3,7 +3,7 @@ from flask import render_template
 from flask import Flask, redirect, request, url_for
 from app import db
 import requests
-
+import json
 
 @app.route('/auth')
 def login():
