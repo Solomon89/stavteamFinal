@@ -1,24 +1,6 @@
-stages:
-  - test
-  - deploy
-
-cache:
-  paths:
-    - vendor/
-    - node_modules/
-    - storage/framework/cache
-
-variables:
-  DEPLOYMENT_PATH: /usr/local/stavteam
-  PROJECT_ROOT: /home/dmitry/back
-
-stavteamTest:
-  stage: test
+run:
   script:
-    - composer install
-    - php vendor/bin/phpunit --colors
-
-stavteamTest_deploy:
-  stage: deploy
-  script:
-    - rsync -a -e 'ssh -p 1881' --delete-before -r ${PROJECT_ROOT}/* root@$STAGE_SERVER:${DEPLOYMENT_PATH}
+    - cd /home/dmitry/back/
+    - git fetch
+    - gil pull
+    - systemctl restart stavteamback
