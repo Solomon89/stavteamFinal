@@ -2,7 +2,7 @@ run:
 
   script:
     - echo "hi"
-    - cd /home/dmitry/back/
+    - unset cd /home/dmitry/back/
     - git fetch
     - gil pull
     - systemctl restart stavteamback
