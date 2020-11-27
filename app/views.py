@@ -7,6 +7,6 @@ from flask import jsonify, request
 @app.route("/")
 @app.route("/index")
 def hello():
-    return "<h1 style='color:orange'>Hello There!</h1>"
+    return render_template("index.html", user="Stavteam")
 
 from app import googleFit
