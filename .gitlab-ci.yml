@@ -4,6 +4,6 @@ run:
     - su - dmitry
     - whoami  
     - cd /home/dmitry/back/
-    - git fetch git@stavteam2020.ddns.net:ld/stavteamback.git
+    - sudo -u dmitry git fetch 
     - gil pull git@stavteam2020.ddns.net:ld/stavteamback.git
     - systemctl restart stavteamback
