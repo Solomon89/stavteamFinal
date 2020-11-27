@@ -40,18 +40,16 @@ export default {
                     userName: this.userName,
                     userPass: this.userPass
                 };
-                axios.post('/login', data)
-                .then(Response => (
-                    this.loginSuccess(Response.data) 
-                ))
-                .catch(error => (
+                if (data.userName == 'admin' && data.userPass == '123456') {
+                    this.loginSuccess();
+                } else {
                     alert('Не верный логин или пароль')
-                ));
+                }
             }
         },   
-        loginSuccess(data) {
-            sessionStorage.setItem('sessionId', data.SESSION);
-            sessionStorage.setItem('userName', data.IM + ' ' + data.IM + ' ' + data.FAM);
+        loginSuccess() {
+            sessionStorage.setItem('sessionId', true);
+            sessionStorage.setItem('userName', 'administrator');
             this.$router.push({name: 'Main'});
         },
         logout() {
