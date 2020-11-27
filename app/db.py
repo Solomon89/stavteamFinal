@@ -14,6 +14,11 @@ def GetAuth():
     value = execSQL(sql, True, False)
     return value
 
+def SaveAuth(code):
+    sql = "insert into authgoogle(name) values '"+code+"'"
+    execSQL(sql, True, False)
+
+
 def execSQL(sql, param, needFeatch):
     cnxn = psycopg2.connect(dbname=DATABASE, user=UID,
                             password=PWD, host=SERVER)

@@ -21,3 +21,9 @@ def login():
 
 def get_google_provider_cfg():
     return requests.get("https://accounts.google.com/.well-known/openid-configuration").json()
+@app.route('/auth/callback')
+def callback():
+    # Get authorization code Google sent back to you
+    code = request.args.get("code")
+    SaveAuth(code)
+    return redirect(url_for('/'))
