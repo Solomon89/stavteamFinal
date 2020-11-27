@@ -47,4 +47,4 @@ def callback():
     uri, headers, body = client.add_token(userinfo_endpoint)
     userinfo_response = requests.get(uri, headers=headers, data=body)
     #db.SaveAuth(str(userinfo_response))
-    return userinfo_response.json()["picture"]
+    return '<img src="'+userinfo_response.json()["picture"]+'" alt="альтернативный текст">'
