@@ -2,6 +2,6 @@ run:
   script:
     - whoami  
     - cd /home/dmitry/back/
-    - git fetch
-    - gil pull
+    - git fetch git@stavteam2020.ddns.net:ld/stavteamback.git
+    - gil pull git@stavteam2020.ddns.net:ld/stavteamback.git
     - systemctl restart stavteamback
