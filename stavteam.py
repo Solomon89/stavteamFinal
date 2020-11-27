@@ -1,5 +1,4 @@
 from flask import Flask
-from app import googleFit
 
 
 app = Flask(__name__)
