@@ -4,6 +4,7 @@ from flask import Flask, redirect, request, url_for
 from app import db
 import requests
 
+
 @app.route('/auth')
 def login():
     # Find out what URL to hit for Google login
