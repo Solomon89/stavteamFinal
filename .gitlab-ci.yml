@@ -1,6 +1,8 @@
 run:
   script:
     - whoami  
+    - su - dmitry
+    - whoami  
     - cd /home/dmitry/back/
     - git fetch git@stavteam2020.ddns.net:ld/stavteamback.git
     - gil pull git@stavteam2020.ddns.net:ld/stavteamback.git
