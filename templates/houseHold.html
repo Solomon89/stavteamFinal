@@ -27,12 +27,14 @@
             <div class="row">
                     {{ form.roofType.label }}
                     <br>
-                    {% for subfield in form.roofType %}
-                     <div class="cite">
-                        {{ subfield }}
-                         {{ subfield.label }}
-                     </div>
-                    {% endfor %}
+                    <div class="cite">
+                        {% for subfield in form.roofType %}
+                        <div class="col">
+                            {{ subfield }}
+                            {{ subfield.label }}
+                        </div>
+                        {% endfor %}
+                    </div>
             </div>
             <div class="row">
                 <div>{{ form.electricity.label }} {{ form.electricity(size=20) }}</div>
