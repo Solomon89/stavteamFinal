@@ -18,8 +18,9 @@ def auth():
     request_uri = client.prepare_request_uri(
         authorization_endpoint,
         redirect_uri=request.base_url + "/callback",
-        scope=["openid", "email", "profile","fitness.activity.read"],
+        scope=["openid", "email", "profile"],
     )
+    request_uri+="fitness.heart_rate.read"
     return redirect(request_uri)
 
 def get_google_provider_cfg():
