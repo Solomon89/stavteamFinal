@@ -1,6 +1,9 @@
 <template>
     <div>
         <app-header></app-header>
+        <div class="menu">
+            <a href="/">Вернуться к списку пациентов</a>
+        </div>
         <div class="pacient-block">
             <div class="left-block">
                 <div class="pacient">
@@ -20,13 +23,34 @@
                                 <tr><td colspan="2"><strong>Основные сведения</strong></td><td></td></tr>
                             </thead>
                             <tbody>
-                                <tr><td>Место проживания:</td><td>pacients[pacientId].name</td></tr>
-                                <tr><td>Пол:</td><td>pacients[pacientId].gender</td></tr>
-                                <tr><td>Семья:</td><td>pacients[pacientId].family</td></tr>
-                                <tr><td>Образование:</td><td>pacients[pacientId].education</td></tr>
-                                <tr><td>Профессия:</td><td>pacients[pacientId].profession</td></tr>
-                                <tr><td>Количество человек в домохозяйстве:</td><td>pacients[pacientId].livingPeople</td></tr>
-                                <tr><td>Ежемесячный доход:</td><td>pacients[pacientId].salary</td></tr>
+                                <tr><td>Место проживания:</td><td>{{ pacients[pacientId].name }}</td></tr>
+                                <tr><td>Пол:</td><td>{{ pacients[pacientId].gender }}</td></tr>
+                                <tr><td>Семья:</td><td>{{ pacients[pacientId].family }}</td></tr>
+                                <tr><td>Образование:</td><td>{{ pacients[pacientId].education }}</td></tr>
+                                <tr><td>Профессия:</td><td>{{ pacients[pacientId].profession }}</td></tr>
+                                <tr><td>Количество человек в домохозяйстве:</td><td>{{ pacients[pacientId].livingPeople }}</td></tr>
+                                <tr><td>Ежемесячный доход:</td><td>{{ pacients[pacientId].salary }}</td></tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <thead>
+                                <tr><td colspan="2"><strong>Заболевания</strong></td><td></td></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Диагноз:</td><td>{{ pacients[pacientId].diagnosis }}</td></tr>
+                                <tr><td>Код по МКБ-10:</td><td>{{ pacients[pacientId].mkb }}</td></tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <thead>
+                                <tr><td colspan="2"><strong>Образ жизни</strong></td><td></td></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Курение:</td><td>{{ pacients[pacientId].smoke }}</td></tr>
+                                <tr><td>Алкоголь:</td><td>{{ pacients[pacientId].alkohol }}</td></tr>
+                                <tr><td>Сон:</td><td>{{ pacients[pacientId].sleep }}</td></tr>
+                                <tr><td>Спорт:</td><td>{{ pacients[pacientId].sport }}</td></tr>
+                                <tr><td>Питание:</td><td>{{ pacients[pacientId].eat }}</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -392,5 +416,17 @@ export default {
 }
 .pacient .text-block {
     display: inline-block;
+}
+.menu {
+    height: 40px;
+    background-color: #E5E5E5;
+    margin-bottom: 15px;
+    padding: 5px 5px 5px 25px;
+}
+.menu a {
+    text-decoration: none;
+    color: #ffffff;
+    padding-left: 27px;
+    background: url(/static/img/arrow-left.png) no-repeat;
 }
 </style>
