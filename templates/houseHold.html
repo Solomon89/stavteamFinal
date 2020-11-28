@@ -12,51 +12,63 @@
         <form method="POST" action="/">
             {{ form.csrf_token }}
             <h1>Анкета по домашним хозяйствам</h1>
-            <div>{{ form.dateCreate.label }} {{ form.dateCreate(size=20) }}</div>
-            <div>{{ form.roofType.label }}
-                <br> {% for subfield in form.roofType %}
-                <tr>
-                    <td>{{ subfield }}</td>
-                    <td>{{ subfield.label }}</td>
-                </tr>
-                {% endfor %}
+            <div class="row">
+                <div>{{ form.dateCreate.label }} {{ form.dateCreate(size=20) }}</div>
             </div>
-            <div>{{ form.electricity.label }} {{ form.electricity(size=20) }}</div>
-            <div>
-                {{ form.fuelType.label }}
-                <br> {% for subfield in form.fuelType %}
-                <tr>
-                    <td>{{ subfield }}</td>
-                    <td>{{ subfield.label }}</td>
-                </tr>
-                {% endfor %}
+            <div class="jumbotron jumbotron-fluid">
+                <div>{{ form.roofType.label }}
+                    <br> {% for subfield in form.roofType %}
+                    <tr>
+                        <td>{{ subfield }}</td>
+                        <td>{{ subfield.label }}</td>
+                    </tr>
+                    {% endfor %}
+                </div>
             </div>
-            <div>
-                {{ form.heatType.label }}
-                <br> {% for subfield in form.heatType %}
-                <tr>
-                    <td>{{ subfield }}</td>
-                    <td>{{ subfield.label }}</td>
-                </tr>
-                {% endfor %}
+            <div class="jumbotron jumbotron-fluid">
+                <div>{{ form.electricity.label }} {{ form.electricity(size=20) }}</div>
+                <div>
+                    {{ form.fuelType.label }}
+                    <br> {% for subfield in form.fuelType %}
+                    <tr>
+                        <td>{{ subfield }}</td>
+                        <td>{{ subfield.label }}</td>
+                    </tr>
+                    {% endfor %}
+                </div>
             </div>
-            <div>
-                {{ form.waterSource.label }}
-                <br> {% for subfield in form.waterSource %}
-                <tr>
-                    <td>{{ subfield }}</td>
-                    <td>{{ subfield.label }}</td>
-                </tr>
-                {% endfor %}
+            <div class="jumbotron jumbotron-fluid">
+                <div>
+                    {{ form.heatType.label }}
+                    <br> {% for subfield in form.heatType %}
+                    <tr>
+                        <td>{{ subfield }}</td>
+                        <td>{{ subfield.label }}</td>
+                    </tr>
+                    {% endfor %}
+                </div>
             </div>
-            <div>
-                {{ form.waterTime.label }}
-                <br> {% for subfield in form.waterTime %}
-                <tr>
-                    <td>{{ subfield }}</td>
-                    <td>{{ subfield.label }}</td>
-                </tr>
-                {% endfor %}
+            <div class="jumbotron jumbotron-fluid">
+                <div>
+                    {{ form.waterSource.label }}
+                    <br> {% for subfield in form.waterSource %}
+                    <tr>
+                        <td>{{ subfield }}</td>
+                        <td>{{ subfield.label }}</td>
+                    </tr>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="jumbotron jumbotron-fluid">
+                <div>
+                    {{ form.waterTime.label }}
+                    <br> {% for subfield in form.waterTime %}
+                    <tr>
+                        <td>{{ subfield }}</td>
+                        <td>{{ subfield.label }}</td>
+                    </tr>
+                    {% endfor %}
+                </div>
             </div>
             <div>{{ form.properties.label }}{{ form.properties}}</div>
             <div>{{ form.incoming.label }} {{ form.incoming(size=20) }}</div>

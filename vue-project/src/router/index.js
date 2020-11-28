@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Main from '@/components/Main'
 import Login from '@/components/Login'
+import Pacient from '@/components/pacient/Pacient'
 
 Vue.use(Router)
 
@@ -25,6 +26,14 @@ let router = new Router({
         requiresAuth: false
       }
     },
+    {
+      path: '/pacient/:id',
+      name: 'Pacient',
+      component: Pacient,
+      meta: {
+        requiresAuth: true
+      }
+    }
   ]
 })
 
