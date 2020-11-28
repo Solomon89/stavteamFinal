@@ -8,6 +8,15 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-light bg-light" style="background-color:#2F80ED!important; height: 60px;">
+        <a class="navbar-brand" href="#">
+            <img src="/static/img/SERDCE.png" alt="" loading="lazy">
+        </a>
+    </nav>
+
+
+
+
     <div class="container">
         <form method="POST" action="/">
             {{ form.csrf_token }}
@@ -15,7 +24,7 @@
             <div class="row">
                 <div>{{ form.dateCreate.label }} {{ form.dateCreate(size=20) }}</div>
             </div>
-            <div class="jumbotron jumbotron-fluid">
+            <div class="row">
                 <div>{{ form.roofType.label }}
                     <br> {% for subfield in form.roofType %}
                     <tr>
@@ -25,7 +34,7 @@
                     {% endfor %}
                 </div>
             </div>
-            <div class="jumbotron jumbotron-fluid">
+            <div class="row">
                 <div>{{ form.electricity.label }} {{ form.electricity(size=20) }}</div>
                 <div>
                     {{ form.fuelType.label }}
@@ -37,7 +46,7 @@
                     {% endfor %}
                 </div>
             </div>
-            <div class="jumbotron jumbotron-fluid">
+            <div class="row">
                 <div>
                     {{ form.heatType.label }}
                     <br> {% for subfield in form.heatType %}
@@ -48,7 +57,7 @@
                     {% endfor %}
                 </div>
             </div>
-            <div class="jumbotron jumbotron-fluid">
+            <div class="row">
                 <div>
                     {{ form.waterSource.label }}
                     <br> {% for subfield in form.waterSource %}
@@ -59,7 +68,7 @@
                     {% endfor %}
                 </div>
             </div>
-            <div class="jumbotron jumbotron-fluid">
+            <div class="row">
                 <div>
                     {{ form.waterTime.label }}
                     <br> {% for subfield in form.waterTime %}
