@@ -5,7 +5,14 @@
                 <img src="/static/img/logo.png" width="52px" height="auto">
             </div>
             <div class="search">
-                <input type="text" placeholder="Поиск по пациентам">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Поиск по пациентам">
+                    <div class="input-group-append">
+                        <a href="#">
+                            <img src="/static/img/search.png">
+                        </a>
+                    </div>
+                </div>
             </div>
             <div class="header-user-panel">
                 <span class="header-user-name"><strong>{{ userName }}</strong></span>
@@ -69,7 +76,9 @@ export default {
     }
     .search {
         display: inline-block;
-        background: #C4C4C4;
-        margin: 15px;
+        margin: 10px;
+    }
+    .search input {
+        background-color: #e9ecef;
     }
 </style>
