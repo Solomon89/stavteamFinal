@@ -421,8 +421,11 @@ export default {
     height: 40px;
     background-color: #E5E5E5;
     margin-bottom: 15px;
+    padding: 5px 5px 5px 25px;
 }
 .menu a {
+    text-decoration: none;
+    color: #ffffff;
     padding-left: 27px;
     background: url(/static/img/arrow-left.png) no-repeat;
 }
