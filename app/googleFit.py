@@ -120,7 +120,11 @@ def getGraph(id):
         value = pulseData[pulse]['value']
         days.append(startTime)
         heartRates.append(value)
-    plt.figure(figsize=(12, 7))
+
+    fgr = plt.figure(figsize=(12, 7))
     print(days[:200])
     plt.plot(days[:200], heartRates[:200], 'o-r', alpha=0.7, label="first", lw=0.5, mec='b', mew=0.5, ms=1)
     return fig_to_html(fgr)
+
+
+    
