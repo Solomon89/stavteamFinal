@@ -66,5 +66,5 @@ def checkToNull(param):
 
 def getRoofTypes():
     sql='SELECT id, "name" FROM public.roof_types;'
-    rows=execSQL(sql,None,False)
+    rows=execSQL(sql,None,True)
     return rows
