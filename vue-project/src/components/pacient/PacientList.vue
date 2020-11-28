@@ -78,7 +78,6 @@ export default {
                     name: 'Веселова Виргиния Степановна',
                     status: 'ok'
                 },
-                ,
                 {
                     photo: '',
                     name: 'Овчинникова Ландыш Ивановна',
@@ -98,7 +97,7 @@ export default {
                     photo: '',
                     name: 'Зайцева Ева Мэлоровна',
                     status: 'ok'
-                },,
+                },
                 {
                     photo: '',
                     name: 'Беспалов Леонтий Мэлорович',
@@ -118,7 +117,7 @@ export default {
                     photo: '',
                     name: 'Тетерин Ян Игнатьевич',
                     status: 'alert'
-                },,
+                },
                 {
                     photo: '',
                     name: 'Романова Ярослава Рубеновна',
@@ -149,8 +148,5 @@ export default {
 </script>
 
 <style scoped>
-    .tools {
-        height: 40px;
-        background-color: #E5E5E5;
-    }
+
 </style>
