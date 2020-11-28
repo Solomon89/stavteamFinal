@@ -8,7 +8,7 @@ from app.models import GoogleUser
 
 
 @app.route('/auth')
-def login():
+def auth():
     # Find out what URL to hit for Google login
     google_provider_cfg = get_google_provider_cfg()
     authorization_endpoint = google_provider_cfg["authorization_endpoint"]
