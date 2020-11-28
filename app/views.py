@@ -18,7 +18,8 @@ def login():
     rows = dbFunctions.execSQL(sql, None, True)
     if len(rows) > 0:
         for row in rows:
-            if row[4].strip() == param['userPass']:
+            print('password is ', row[5], 'getting ',  param['userPass'])
+            if row[5].strip() == param['userPass']:
                 uid = dbFunctions.makeSession(row[0])
                 userInfo = {'FAM': row[1], 'IM': row[2], 'OT': row[3], 'ROLE':row[7],  'SESSION': uid}
                 return jsonify(userInfo)
@@ -26,4 +27,9 @@ def login():
     else:
         abort(401)
 
+@app.route('/logout', methods=['POST'])
+def logout():
+    param = request.get_json()
+    if dbFunctions.killSession(param['session']):
+        return 'OK'
 from app import googleFit

@@ -9,7 +9,7 @@ PWD = '111111'
 
 
 def killExpiredSessions(interval):
-    sql = '''delete FROM public.sessions WHERE extract(epoch  from (now()::timestamp-"loginTime"))>''' + str(interval)
+    sql = '''delete FROM public.sessions WHERE extract(epoch  from (now()::timestamp-logintime))>''' + str(interval)
     execSQL(sql, True, False)
 
 
@@ -22,7 +22,7 @@ def checkSession(uid):
 
 def makeSession(userId):
     uid = str(uuid.uuid4())
-    sql = '''INSERT INTO public.sessions(session, "userID", "loginTime")
+    sql = '''INSERT INTO public.sessions(session, userid, logintime)
      VALUES
            (\'''' + uid + '''\',
             ''' + str(userId) + ''',NOW()::timestamp)'''
