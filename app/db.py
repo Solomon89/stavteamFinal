@@ -1,6 +1,6 @@
 import psycopg2
 import uuid
-
+from app.models import GoogleUser
 
 deleteInterval = 3600
 SERVER = '176.15.105.107'
@@ -9,14 +9,19 @@ UID = 'stavteamdb'
 PWD = '111111'
 
 
-def GetAuth():
-    sql = 'SELECT * FROM authgoogle LIMIT 10'
-    value = execSQL(sql, True, False)
-    return value
+def GetAuth(unique_id):
+    _return = ""
+    sql = 'SELECT * FROM usergoogle where unique_id = "' +unique_id+ "'"
+    value = execSQL(sql, True, True)
+    for user in value:
+        _return += str(user)
+    return _return
 
-def SaveAuth(code):
-    sql = "insert into authgoogle(name) values '"+code+"'"
+def SaveAuth(GoogleUser):
+
+    sql = "insert into usergoogle (name,email,profile_pic,unique_id) values (" +GoogleUser.inLineToSave() + ")"
     execSQL(sql, True, False)
+
 
 
 def execSQL(sql, param, needFeatch):
