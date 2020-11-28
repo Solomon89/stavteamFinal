@@ -24,7 +24,7 @@ def auth(id):
     # scopes that let you retrieve user's profile from Google
     request_uri = client.prepare_request_uri(
         authorization_endpoint,
-        redirect_uri=request.base_url + "/callback/" + id + "/",
+        redirect_uri=request.base_url + "/callback/" + str(id) + "/",
         scope=["openid", "email", "profile",'https://www.googleapis.com/auth/fitness.heart_rate.read','https://www.googleapis.com/auth/fitness.activity.read',
                'https://www.googleapis.com/auth/fitness.sleep.read'],
     )
