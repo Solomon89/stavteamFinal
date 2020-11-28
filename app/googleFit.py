@@ -5,6 +5,14 @@ from app import db
 import requests
 import json
 from app.models import GoogleUser
+from datetime import datetime
+from apiclient.discovery import build
+from oauth2client.client import OAuth2WebServerFlow, AccessTokenCredentials 
+import httplib2
+import matplotlib.pyplot as plt
+
+DATA_SOURCE = "derived:com.google.heart_rate.bpm:com.google.android.gms:merge_heart_rate_bpm"
+DATA_SET = "1551700038292387000-1751700038292387000"
 
 @app.route('/auth/<int:userId>')
 def auth2(userId):
@@ -82,4 +90,38 @@ def myauth(uniq_id):
         _return += str(items)
     return _return
 
+@app.route('/mygraph/<string:id>')
+def getGraph(id):
+    user = db.GetGoogleAuth(id)
+    print(user[6])
+    credentials = AccessTokenCredentials(user[6],'my-user-agent/1.0')
 
+    http = httplib2.Http()
+    http = credentials.authorize(http)
+
+    fitness_service = build('fitness', 'v1', http=http)
+
+    #########################         Пульс
+    data = fitness_service.users().dataSources().datasets().get(userId='me', dataSourceId=DATA_SOURCE,
+                                                                datasetId=DATA_SET).execute()
+
+    endData = {}
+    i = 0
+    for hr in data['point']:
+        dt = datetime.fromtimestamp(int(hr['startTimeNanos']) // 1000000000)
+        endData[str(i)] = {'startTime': dt, 'value': hr['value'][0]['fpVal']}
+        i += 1
+    pulseData = endData
+    ########################          Шаги
+    data = fitness_service.users().dataSources().datasets().get(userId='me',
+                                                                dataSourceId='derived:com.google.step_count.delta:com.google.android.gms:estimated_steps',
+                                                                datasetId=DATA_SET).execute()
+    for hr in data['point']:
+        dt = datetime.fromtimestamp(int(hr['startTimeNanos']) // 1000000000)
+        endData[str(dt)]=hr['value'][0]['fpVal']
+
+    days=list(endData.keys())
+    heartRates=list(endData.values())
+    plt.figure(figsize=(12, 7))
+    plt.plot(days[:200], heartRates[:200], 'o-r', alpha=0.7, label="first", lw=0.5, mec='b', mew=0.5, ms=1)
+    return fig_to_html(fgr)
