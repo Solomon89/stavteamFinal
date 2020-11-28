@@ -9,7 +9,7 @@ PWD = '111111'
 
 
 def killExpiredSessions(interval):
-    sql = '''delete FROM public.sessions WHERE extract(epoch  from (now()::timestamp-"loginTime"))>''' + str(interval)
+    sql = '''delete FROM public.sessions WHERE extract(epoch  from (now()::timestamp-logintime))>''' + str(interval)
     execSQL(sql, True, False)
 
 

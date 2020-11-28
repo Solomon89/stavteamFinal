@@ -27,4 +27,9 @@ def login():
     else:
         abort(401)
 
+@app.route('/logout', methods=['POST'])
+def logout():
+    param = request.get_json()
+    if dbFunctions.killSession(param['session']):
+        return 'OK'
 from app import googleFit
