@@ -2,7 +2,7 @@
     <div>
         <app-header></app-header>
         <div class="pacient-block">
-            {{ pacients[data.pacientId].name }}
+            {{ pacients[this.data.pacientId].name }}
         </div>
     </div>
 </template>
