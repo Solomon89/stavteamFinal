@@ -27,13 +27,14 @@ authorize_url = flow.step1_get_authorize_url()
 print('Go to the following link in your browser:')
 print(authorize_url)
 code = input('Enter verification code: ').strip()
+#code='4/1AY0e-g41BqSTTB0lfWC4nN84hwvsjJO0t2StM4oiduowXCyNTRD_eVfIY2k'
 credentials = flow.step2_exchange(code)
 
 http = httplib2.Http()
 http = credentials.authorize(http)
 
 fitness_service = build('fitness', 'v1', http=http)
-'''
+
 #########################         Пульс
 data = fitness_service.users().dataSources().datasets().get(userId='me', dataSourceId=DATA_SOURCE,
                                                             datasetId=DATA_SET).execute()
@@ -52,7 +53,6 @@ data = fitness_service.users().dataSources().datasets().get(userId='me',
 
 endData = {}
 i = 0
-print(len(data['point']))
 for hr in data['point']:
     dt1 = datetime.fromtimestamp(int(hr['startTimeNanos']) // 1000000000)
     dt2 = datetime.fromtimestamp(int(hr['endTimeNanos']) // 1000000000)
@@ -65,25 +65,23 @@ data = fitness_service.users().dataSources().datasets().get(userId='me',
                                                             datasetId=DATA_SET).execute()
 endData = {}
 i = 0
-print(len(data['point']))
 for hr in data['point']:
     dt1 = datetime.fromtimestamp(int(hr['startTimeNanos']) // 1000000000)
     dt2 = datetime.fromtimestamp(int(hr['endTimeNanos']) // 1000000000)
     endData[str(i)] = {'startTime': dt1, 'endTime': dt2, 'activityType': hr['value'][0]['intVal']}
     i += 1
 activityData = endData
-'''
+
 ########################          Сон
 data = fitness_service.users().dataSources().datasets().get(userId='me',
                                                             dataSourceId='derived:com.google.sleep.segment:com.google.android.gms:sleep_from_activity<-raw:com.google.activity.segment:com.xiaomi.hm.health:',
                                                             datasetId=DATA_SET).execute()
 endData = {}
 i = 0
-print((data))
 for hr in data['point']:
     dt1 = datetime.fromtimestamp(int(hr['startTimeNanos']) // 1000000000)
     dt2 = datetime.fromtimestamp(int(hr['endTimeNanos']) // 1000000000)
     endData[str(i)] = {'startTime': dt1, 'endTime': dt2, 'activityType': hr['value'][0]['intVal']}
     i += 1
 activityData = endData
-print(activityData)
+
