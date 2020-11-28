@@ -170,6 +170,11 @@ export default {
         height: 50px;
         background-color: #e5e5e5;
         margin-right: 10px;
+        position: relative;
+    }
+    .pacient .image span {
+        position: absolute;
+        top: 0;
     }
     .pacient .text-block {
         display: inline-block;
