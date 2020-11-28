@@ -5,7 +5,7 @@
                 <li v-for="pacient in pacients">
                     <div class="pacient">
                         <div class="image">
-                            <img src="/static/img/pacient-no-img.png>
+                            <img src="/static/img/pacient-no-img.png">
                         </div>
                         <div class="text-block">
                             <div class="info">
