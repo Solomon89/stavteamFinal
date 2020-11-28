@@ -13,7 +13,7 @@
             {{ form.csrf_token }}
             <h1>Анкета по домашним хозяйствам</h1>
             <div class="panel">
-                <div>{{ form.dateCreate.label }} {{ form.dateCreate(size=20,default=datetime.today) }}</div>
+                <div>{{ form.dateCreate.label }} {{ form.dateCreate(size=20) }}</div>
             </div>
 
             <div>{{ form.roofType.label }}
