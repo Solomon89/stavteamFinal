@@ -18,7 +18,7 @@ def auth(id):
     # Find out what URL to hit for Google login
     google_provider_cfg = get_google_provider_cfg()
     authorization_endpoint = google_provider_cfg["authorization_endpoint"]
-    session['id'] = id
+    session['id'] = str(id)
     # Use library to construct the request for Google login and provide
     # scopes that let you retrieve user's profile from Google
     request_uri = client.prepare_request_uri(
@@ -35,7 +35,7 @@ def get_google_provider_cfg():
 
 @app.route('/auth/callback/')
 def callback():
-    id = session['id']
+    id = session.get('id')
     redirect("https://www.googleapis.com/auth/fitness.activity.read")
     # Get authorization code Google sent back to you
     code = request.args.get("code")
