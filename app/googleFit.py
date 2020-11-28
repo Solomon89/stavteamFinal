@@ -18,7 +18,7 @@ def auth():
     request_uri = client.prepare_request_uri(
         authorization_endpoint,
         redirect_uri=request.base_url + "/callback",
-        scope=["openid", "email", "profile"],
+        scope=["openid", "email", "profile","fitness","heart_rate","read"],
     )
     return redirect(request_uri)
 
