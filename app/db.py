@@ -11,11 +11,11 @@ PWD = '111111'
 
 def GetAuth(unique_id):
     _return = ""
-    sql = 'SELECT * FROM usergoogle where unique_id = "' +unique_id+ "'"
+    sql = "SELECT * FROM usergoogle where unique_id = '" +unique_id+ "'"
     value = execSQL(sql, True, True)
     for user in value:
         _return += str(user)
-    return _return
+    return value[0]
 
 def SaveAuth(GoogleUser):
 

@@ -45,6 +45,7 @@ def callback():
     )
     # Parse the tokens!
     client.parse_request_body_response(json.dumps(token_response.json()))
+    print(token_response.json())
     userinfo_endpoint = google_provider_cfg["userinfo_endpoint"]
     uri, headers, body = client.add_token(userinfo_endpoint)
     userinfo_response = requests.get(uri, headers=headers, data=body)
@@ -63,4 +64,8 @@ def callback():
 
 @app.route('/myauth/<string:uniq_id>')
 def myauth(uniq_id):
-    return db.GetAuth(uniq_id)
+    _return = ""
+    user = db.GetAuth(uniq_id)
+    for items in user:
+        _return += str(items)
+    return _return
