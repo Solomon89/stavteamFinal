@@ -4,6 +4,9 @@
             <div class="header-logo">
                 <img src="/static/img/logo.png" width="52px" height="auto">
             </div>
+            <div class="search">
+                <input type="text" placeholder="Поиск по пациентам">
+            </div>
             <div class="header-user-panel">
                 <span class="header-user-name"><strong>{{ userName }}</strong></span>
                 <img src="/static/img/person.png" width="auto" height="30px">
