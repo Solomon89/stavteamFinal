@@ -2,7 +2,7 @@
     <div>
         <app-header></app-header>
         <div class="pacient-block">
-            {{ pacients[1].name }}
+            {{ pacients[this.$route.params - 1].name }}
         </div>
     </div>
 </template>
