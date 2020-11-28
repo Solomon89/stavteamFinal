@@ -122,48 +122,6 @@ export default {
                     photo: '',
                     name: 'Беспалов Леонтий Мэлорович',
                     status: '/static/img/heart-green.png'
-                },
-                {
-                    id: '16',
-                    photo: '',
-                    name: 'Сафонов Вольдемар Кириллович',
-                    status: '/static/img/heart-green.png'
-                },
-                {
-                    id: '17',
-                    photo: '',
-                    name: 'Ершов Пантелей Парфеньевич',
-                    status: '/static/img/heart-green.png'
-                },
-                {
-                    id: '18',
-                    photo: '',
-                    name: 'Тетерин Ян Игнатьевич',
-                    status: '/static/img/heart-red.png'
-                },
-                {
-                    id: '19',
-                    photo: '',
-                    name: 'Романова Ярослава Рубеновна',
-                    status: '/static/img/heart-green.png'
-                },
-                {
-                    id: '20',
-                    photo: '',
-                    name: 'Назаров Овидий Николаевич',
-                    status: '/static/img/heart-green.png'
-                },
-                {
-                    id: '21',
-                    photo: '',
-                    name: 'Кондратьева Евгения Агафоновна',
-                    status: '/static/img/heart-red.png'
-                },
-                {
-                    id: '22',
-                    photo: '',
-                    name: 'Лукин Иосиф Платонович',
-                    status: '/static/img/heart-green.png'
                 }
             ]
         }
