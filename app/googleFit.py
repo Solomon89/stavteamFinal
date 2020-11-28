@@ -21,8 +21,6 @@ def auth():
         scope=["openid", "email", "profile"],
     )
     print(request_uri)
-    request_uri+="fitness.heart_rate.read"
-    print(request_uri)
     return redirect(request_uri)
 
 def get_google_provider_cfg():
@@ -30,6 +28,7 @@ def get_google_provider_cfg():
 
 @app.route('/auth/callback')
 def callback():
+    redirect("https://www.googleapis.com/auth/fitness.activity.read")
     # Get authorization code Google sent back to you
     code = request.args.get("code")
     google_provider_cfg = get_google_provider_cfg()
