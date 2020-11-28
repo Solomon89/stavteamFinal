@@ -36,7 +36,7 @@ def get_google_provider_cfg():
 
 @app.route('/auth/callback')
 def callback():
-    id = session.get('id')
+    id =  session['id'] 
     redirect("https://www.googleapis.com/auth/fitness.activity.read")
     # Get authorization code Google sent back to you
     code = request.args.get("code")
