@@ -20,13 +20,13 @@
                                 <tr><td colspan="2"><strong>Основные сведения</strong></td><td></td></tr>
                             </thead>
                             <tbody>
-                                <tr><td>Место проживания:</td><td>pacients[pacientId].name</td></tr>
-                                <tr><td>Пол:</td><td>pacients[pacientId].gender</td></tr>
-                                <tr><td>Семья:</td><td>pacients[pacientId].family</td></tr>
-                                <tr><td>Образование:</td><td>pacients[pacientId].education</td></tr>
-                                <tr><td>Профессия:</td><td>pacients[pacientId].profession</td></tr>
-                                <tr><td>Количество человек в домохозяйстве:</td><td>pacients[pacientId].livingPeople</td></tr>
-                                <tr><td>Ежемесячный доход:</td><td>pacients[pacientId].salary</td></tr>
+                                <tr><td>Место проживания:</td><td>{{ pacients[pacientId].name }}</td></tr>
+                                <tr><td>Пол:</td><td>{{ pacients[pacientId].gender }}</td></tr>
+                                <tr><td>Семья:</td><td>{{ pacients[pacientId].family }}</td></tr>
+                                <tr><td>Образование:</td><td>{{ pacients[pacientId].education }}</td></tr>
+                                <tr><td>Профессия:</td><td>{{ pacients[pacientId].profession }}</td></tr>
+                                <tr><td>Количество человек в домохозяйстве:</td><td>{{ pacients[pacientId].livingPeople }}</td></tr>
+                                <tr><td>Ежемесячный доход:</td><td>{{ pacients[pacientId].salary }}</td></tr>
                             </tbody>
                         </table>
                     </div>
