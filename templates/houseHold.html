@@ -6,66 +6,7 @@
 </head>
 <body>
 <form method="POST" action="/">
-    {{ form.csrf_token }}
-    <div>
-    {{ form.dateCreate.label }} {{ form.dateCreate(size=20) }}
-    </div>
-    <div>
-    {{ form.roofType.label }}
-        <br>
-    {% for subfield in form.roofType %}
-    <tr>
-        <td>{{ subfield }}</td>
-        <td>{{ subfield.label }}</td>
-    </tr>
-{% endfor %}
-    </div>
-     <div>
-    {{ form.electricity.label }} {{ form.electricity(size=20) }}
-    </div>
-    <div>
-    {{ form.fuelType.label }}
-        <br>
-    {% for subfield in form.fuelType %}
-    <tr>
-        <td>{{ subfield }}</td>
-        <td>{{ subfield.label }}</td>
-    </tr>
-{% endfor %}
-    </div>
-    <div>
-    {{ form.heatType.label }}
-        <br>
-    {% for subfield in form.heatType %}
-    <tr>
-        <td>{{ subfield }}</td>
-        <td>{{ subfield.label }}</td>
-    </tr>
-{% endfor %}
-    </div>
-    <div>
-    {{ form.waterSource.label }}
-        <br>
-    {% for subfield in form.waterSource %}
-    <tr>
-        <td>{{ subfield }}</td>
-        <td>{{ subfield.label }}</td>
-    </tr>
-{% endfor %}
-    </div>
-    <div>
-    {{ form.waterTime.label }}
-        <br>
-    {% for subfield in form.waterTime %}
-    <tr>
-        <td>{{ subfield }}</td>
-        <td>{{ subfield.label }}</td>
-    </tr>
-{% endfor %}
-    </div>
-    <div>
-    {{ form.properties.label }}{{ form.properties(rows=3, multiple=True) }}
-    </div>
+   {{ form.as_p }}
     <input type="submit" value="Go">
 </form>
 </body>
