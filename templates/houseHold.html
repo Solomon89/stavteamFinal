@@ -8,175 +8,178 @@
 </head>
 
 <body>
-    <form method="POST" action="/">
-        {{ form.csrf_token }}
-        <h1>Анкета по домашним хозяйствам</h1>>
-        <div>{{ form.dateCreate.label }} {{ form.dateCreate(size=20) }}</div>
-        <div>{{ form.roofType.label }}
-            <br> {% for subfield in form.roofType %}
-            <tr>
-                <td>{{ subfield }}</td>
-                <td>{{ subfield.label }}</td>
-            </tr>
-            {% endfor %}
-        </div>
-        <div>{{ form.electricity.label }} {{ form.electricity(size=20) }}</div>
-        <div>
-            {{ form.fuelType.label }}
-            <br> {% for subfield in form.fuelType %}
-            <tr>
-                <td>{{ subfield }}</td>
-                <td>{{ subfield.label }}</td>
-            </tr>
-            {% endfor %}
-        </div>
-        <div>
-            {{ form.heatType.label }}
-            <br> {% for subfield in form.heatType %}
-            <tr>
-                <td>{{ subfield }}</td>
-                <td>{{ subfield.label }}</td>
-            </tr>
-            {% endfor %}
-        </div>
-        <div>
-            {{ form.waterSource.label }}
-            <br> {% for subfield in form.waterSource %}
-            <tr>
-                <td>{{ subfield }}</td>
-                <td>{{ subfield.label }}</td>
-            </tr>
-            {% endfor %}
-        </div>
-        <div>
-            {{ form.waterTime.label }}
-            <br> {% for subfield in form.waterTime %}
-            <tr>
-                <td>{{ subfield }}</td>
-                <td>{{ subfield.label }}</td>
-            </tr>
-            {% endfor %}
-        </div>
-        <div>{{ form.properties.label }}{{ form.properties}}</div>
-        <div>{{ form.incoming.label }} {{ form.incoming(size=20) }}</div>
-        <div>{{ form.moneyFoodForHouseHold.label }} {{ form.moneyFoodForHouseHold(size=20) }}</div>
-        <div>{{ form.hasCult.label }} {{ form.hasCult(size=20) }}</div>
-        <div>{{ form.cultSquare.label }} {{ form.cultSquare(size=20) }}</div>
-        <div>{{ form.cultSquare.label }} {{ form.cultSquare(size=20) }} {% for subfield in form.units %}
-            <tr>
-                <td>{{ subfield }}</td>
-                <td>{{ subfield.label }}</td>
-            </tr>
-            {% endfor %}
-        </div>
-        <div>
-            {{ form.coocking.label }}
-            <br> {% for subfield in form.coocking %}
-            <tr>
-                <td>{{ subfield }}</td>
-                <td>{{ subfield.label }}</td>
-            </tr>
-            {% endfor %}
-        </div>
-        <div>{{ form.ventil.label }}{{ form.ventil}}</div>
-        <div>{{ form.coockingOutside.label }}{{ form.coockingOutside}}</div>
-        <h1>Послушайте следующие утверждения и отметьте наиболее подходящий вариант</h1>
-        <h2>Как часто возникает то, что вам и членам вашей семьи не хватает еды?</h2>
-        <div>
-            {{ form.notEnoughFoodNow.label }}
-            <br> {% for subfield in form.notEnoughFoodNow %}
-            <tr>
-                <td>{{ subfield }}</td>
-                <td>{{ subfield.label }}</td>
-            </tr>
-            {% endfor %}
-        </div>
-        <div>
-            {{ form.notEnoughFoodYear.label }}
-            <br> {% for subfield in form.notEnoughFoodYear %}
-            <tr>
-                <td>{{ subfield }}</td>
-                <td>{{ subfield.label }}</td>
-            </tr>
-            {% endfor %}
-        </div>
-        <h2>Как часто возникало то, что вам и членам вашей семьи не хватало средств на покупку одежды? </h2>
-        <div>
-            {{ form.notEnoughClothesNow.label }}
-            <br> {% for subfield in form.notEnoughClothesNow %}
-            <tr>
-                <td>{{ subfield }}</td>
-                <td>{{ subfield.label }}</td>
-            </tr>
-            {% endfor %}
-        </div>
-        <div>
-            {{ form.notEnoughClothesYear.label }}
-            <br> {% for subfield in form.notEnoughClothesYear %}
-            <tr>
-                <td>{{ subfield }}</td>
-                <td>{{ subfield.label }}</td>
-            </tr>
-            {% endfor %}
-        </div>
-        <h2>У вас имеются трудности с оплатой счетов? (за жил. площадь, электричество, теплоснабжение и др.)? </h2>
-        <div>
-            {{ form.notEnoughPayNow.label }}
-            <br> {% for subfield in form.notEnoughPayNow %}
-            <tr>
-                <td>{{ subfield }}</td>
-                <td>{{ subfield.label }}</td>
-            </tr>
-            {% endfor %}
-        </div>
-        <div>
-            {{ form.notEnoughPayYear.label }}
-            <br> {% for subfield in form.notEnoughPayYear %}
-            <tr>
-                <td>{{ subfield }}</td>
-                <td>{{ subfield.label }}</td>
-            </tr>
-            {% endfor %}
-        </div>
-        <h1>Чем (из следующего) владеет ваше домашнее хозяйство?</h1>
-        <div>{{ form.assets.label }}{{ form.assets}}</div>
-        <div>
-            {{ form.incomingPartForFood.label }}
-            <br> {% for subfield in form.incomingPartForFood %}
-            <tr>
-                <td>{{ subfield }}</td>
-                <td>{{ subfield.label }}</td>
-            </tr>
-            {% endfor %}
-        </div>
-        <h1>Выберите высказывание, которое наиболее точно описывает финансовые возможности Вашей семьи</h1>
-        <div>{{ form.notEnoughForNecessary.label }}{{ form.notEnoughForNecessary}}</div>
-        <div>{{ form.necessaryNotExpensive.label }}{{ form.necessaryNotExpensive}}</div>
-        <div>{{ form.expensiveSometimes.label }}{{ form.expensiveSometimes}}</div>
-        <div>{{ form.expensiveNotVeryExpensive.label }}{{ form.expensiveNotVeryExpensive}}</div>
-        <div>{{ form.veryExpensive.label }}{{ form.veryExpensive}}</div>
-        <div>
-            {{ form.incomeLevel.label }}
-            <br> {% for subfield in form.incomeLevel %}
-            <tr>
-                <td>{{ subfield }}</td>
-                <td>{{ subfield.label }}</td>
-            </tr>
-            {% endfor %}
-        </div>
-        <div>
-            {{ form.typeHousing.label }}
-            <br> {% for subfield in form.typeHousing %}
-            <tr>
-                <td>{{ subfield }}</td>
-                <td>{{ subfield.label }}</td>
-            </tr>
-            {% endfor %}
-        </div>
-        <div>{{ form.livingRooms.label }}{{ form.livingRooms}}</div>
-        <div>{{ form.livingSquare.label }}{{ form.livingSquare}}</div>
-        <input type="submit" value="Go">
-    </form>
+    <div class="container">
+        <form method="POST" action="/">
+            {{ form.csrf_token }}
+            <h1>Анкета по домашним хозяйствам</h1>
+            <div>{{ form.dateCreate.label }} {{ form.dateCreate(size=20) }}</div>
+            <div>{{ form.roofType.label }}
+                <br> {% for subfield in form.roofType %}
+                <tr>
+                    <td>{{ subfield }}</td>
+                    <td>{{ subfield.label }}</td>
+                </tr>
+                {% endfor %}
+            </div>
+            <div>{{ form.electricity.label }} {{ form.electricity(size=20) }}</div>
+            <div>
+                {{ form.fuelType.label }}
+                <br> {% for subfield in form.fuelType %}
+                <tr>
+                    <td>{{ subfield }}</td>
+                    <td>{{ subfield.label }}</td>
+                </tr>
+                {% endfor %}
+            </div>
+            <div>
+                {{ form.heatType.label }}
+                <br> {% for subfield in form.heatType %}
+                <tr>
+                    <td>{{ subfield }}</td>
+                    <td>{{ subfield.label }}</td>
+                </tr>
+                {% endfor %}
+            </div>
+            <div>
+                {{ form.waterSource.label }}
+                <br> {% for subfield in form.waterSource %}
+                <tr>
+                    <td>{{ subfield }}</td>
+                    <td>{{ subfield.label }}</td>
+                </tr>
+                {% endfor %}
+            </div>
+            <div>
+                {{ form.waterTime.label }}
+                <br> {% for subfield in form.waterTime %}
+                <tr>
+                    <td>{{ subfield }}</td>
+                    <td>{{ subfield.label }}</td>
+                </tr>
+                {% endfor %}
+            </div>
+            <div>{{ form.properties.label }}{{ form.properties}}</div>
+            <div>{{ form.incoming.label }} {{ form.incoming(size=20) }}</div>
+            <div>{{ form.moneyFoodForHouseHold.label }} {{ form.moneyFoodForHouseHold(size=20) }}</div>
+            <div>{{ form.hasCult.label }} {{ form.hasCult(size=20) }}</div>
+            <div>{{ form.cultSquare.label }} {{ form.cultSquare(size=20) }}</div>
+            <div>{{ form.cultSquare.label }} {{ form.cultSquare(size=20) }} {% for subfield in form.units %}
+                <tr>
+                    <td>{{ subfield }}</td>
+                    <td>{{ subfield.label }}</td>
+                </tr>
+                {% endfor %}
+            </div>
+            <div>
+                {{ form.coocking.label }}
+                <br> {% for subfield in form.coocking %}
+                <tr>
+                    <td>{{ subfield }}</td>
+                    <td>{{ subfield.label }}</td>
+                </tr>
+                {% endfor %}
+            </div>
+            <div>{{ form.ventil.label }}{{ form.ventil}}</div>
+            <div>{{ form.coockingOutside.label }}{{ form.coockingOutside}}</div>
+            <h1>Послушайте следующие утверждения и отметьте наиболее подходящий вариант</h1>
+            <h2>Как часто возникает то, что вам и членам вашей семьи не хватает еды?</h2>
+            <div>
+                {{ form.notEnoughFoodNow.label }}
+                <br> {% for subfield in form.notEnoughFoodNow %}
+                <tr>
+                    <td>{{ subfield }}</td>
+                    <td>{{ subfield.label }}</td>
+                </tr>
+                {% endfor %}
+            </div>
+            <div>
+                {{ form.notEnoughFoodYear.label }}
+                <br> {% for subfield in form.notEnoughFoodYear %}
+                <tr>
+                    <td>{{ subfield }}</td>
+                    <td>{{ subfield.label }}</td>
+                </tr>
+                {% endfor %}
+            </div>
+            <h2>Как часто возникало то, что вам и членам вашей семьи не хватало средств на покупку одежды? </h2>
+            <div>
+                {{ form.notEnoughClothesNow.label }}
+                <br> {% for subfield in form.notEnoughClothesNow %}
+                <tr>
+                    <td>{{ subfield }}</td>
+                    <td>{{ subfield.label }}</td>
+                </tr>
+                {% endfor %}
+            </div>
+            <div>
+                {{ form.notEnoughClothesYear.label }}
+                <br> {% for subfield in form.notEnoughClothesYear %}
+                <tr>
+                    <td>{{ subfield }}</td>
+                    <td>{{ subfield.label }}</td>
+                </tr>
+                {% endfor %}
+            </div>
+            <h2>У вас имеются трудности с оплатой счетов? (за жил. площадь, электричество, теплоснабжение и др.)? </h2>
+            <div>
+                {{ form.notEnoughPayNow.label }}
+                <br> {% for subfield in form.notEnoughPayNow %}
+                <tr>
+                    <td>{{ subfield }}</td>
+                    <td>{{ subfield.label }}</td>
+                </tr>
+                {% endfor %}
+            </div>
+            <div>
+                {{ form.notEnoughPayYear.label }}
+                <br> {% for subfield in form.notEnoughPayYear %}
+                <tr>
+                    <td>{{ subfield }}</td>
+                    <td>{{ subfield.label }}</td>
+                </tr>
+                {% endfor %}
+            </div>
+            <h1>Чем (из следующего) владеет ваше домашнее хозяйство?</h1>
+            <div>{{ form.assets.label }}{{ form.assets}}</div>
+            <div>
+                {{ form.incomingPartForFood.label }}
+                <br> {% for subfield in form.incomingPartForFood %}
+                <tr>
+                    <td>{{ subfield }}</td>
+                    <td>{{ subfield.label }}</td>
+                </tr>
+                {% endfor %}
+            </div>
+            <h1>Выберите высказывание, которое наиболее точно описывает финансовые возможности Вашей семьи</h1>
+            <div>{{ form.notEnoughForNecessary.label }}{{ form.notEnoughForNecessary}}</div>
+            <div>{{ form.necessaryNotExpensive.label }}{{ form.necessaryNotExpensive}}</div>
+            <div>{{ form.expensiveSometimes.label }}{{ form.expensiveSometimes}}</div>
+            <div>{{ form.expensiveNotVeryExpensive.label }}{{ form.expensiveNotVeryExpensive}}</div>
+            <div>{{ form.veryExpensive.label }}{{ form.veryExpensive}}</div>
+            <div>
+                {{ form.incomeLevel.label }}
+                <br> {% for subfield in form.incomeLevel %}
+                <tr>
+                    <td>{{ subfield }}</td>
+                    <td>{{ subfield.label }}</td>
+                </tr>
+                {% endfor %}
+            </div>
+            <div>
+                {{ form.typeHousing.label }}
+                <br> {% for subfield in form.typeHousing %}
+                <tr>
+                    <td>{{ subfield }}</td>
+                    <td>{{ subfield.label }}</td>
+                </tr>
+                {% endfor %}
+            </div>
+            <div>{{ form.livingRooms.label }}{{ form.livingRooms}}</div>
+            <div>{{ form.livingSquare.label }}{{ form.livingSquare}}</div>
+            <input type="submit" value="Go">
+        </form>
+    </div>
+
 </body>
 
 </html>
