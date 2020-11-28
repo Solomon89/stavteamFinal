@@ -20,7 +20,9 @@ def auth():
         redirect_uri=request.base_url + "/callback",
         scope=["openid", "email", "profile"],
     )
+    print(request_uri)
     request_uri+="fitness.heart_rate.read"
+    print(request_uri)
     return redirect(request_uri)
 
 def get_google_provider_cfg():
