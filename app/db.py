@@ -1,6 +1,6 @@
 import psycopg2
 import uuid
-
+from app.models import GoogleUser
 
 deleteInterval = 3600
 SERVER = '176.15.105.107'
@@ -14,9 +14,10 @@ def GetAuth():
     value = execSQL(sql, True, False)
     return value
 
-def SaveAuth(code):
-    sql = "insert into authgoogle(name) values '"+code+"'"
+def SaveAuth(GoogleUser):
+    sql = "insert into authgoogle(name,email,profile_pic,unique_id) values '"+GoogleUser.inLineToSave()+"'"
     execSQL(sql, True, False)
+
 
 
 def execSQL(sql, param, needFeatch):

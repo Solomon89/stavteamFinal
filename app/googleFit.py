@@ -4,6 +4,8 @@ from flask import Flask, redirect, request, url_for
 from app import db
 import requests
 import json
+from app.models import GoogleUser
+
 
 @app.route('/auth')
 def login():
@@ -46,5 +48,15 @@ def callback():
     userinfo_endpoint = google_provider_cfg["userinfo_endpoint"]
     uri, headers, body = client.add_token(userinfo_endpoint)
     userinfo_response = requests.get(uri, headers=headers, data=body)
-    #db.SaveAuth(str(userinfo_response))
-    return '<img src="'+userinfo_response.json()["picture"]+'" alt="альтернативный текст">'
+    if userinfo_response.json().get("email_verified"):
+        unique_id = userinfo_response.json()["sub"]
+        users_email = userinfo_response.json()["email"]
+        picture = userinfo_response.json()["picture"]
+        users_name = userinfo_response.json()["given_name"]
+        User = GoogleUser.GoogleUser(unique_id,users_email,picture,users_name)
+        db.SaveAuth(User)
+    else:
+        return "User email not available or not verified by Google.", 400
+
+    
+    return '<p>'+User.users_email+'</p><img src="'+User.picture+'" alt="альтернативный текст">'
