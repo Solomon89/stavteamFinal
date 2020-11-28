@@ -18,8 +18,10 @@ def auth():
     request_uri = client.prepare_request_uri(
         authorization_endpoint,
         redirect_uri=request.base_url + "/callback",
-        scope=["openid", "email", "profile"],
+        scope=["openid", "email", "profile",'https://www.googleapis.com/auth/fitness.heart_rate.read','https://www.googleapis.com/auth/fitness.activity.read',
+               'https://www.googleapis.com/auth/fitness.sleep.read'],
     )
+    print(request_uri)
     return redirect(request_uri)
 
 def get_google_provider_cfg():
@@ -27,6 +29,7 @@ def get_google_provider_cfg():
 
 @app.route('/auth/callback')
 def callback():
+    redirect("https://www.googleapis.com/auth/fitness.activity.read")
     # Get authorization code Google sent back to you
     code = request.args.get("code")
     google_provider_cfg = get_google_provider_cfg()
@@ -45,6 +48,7 @@ def callback():
     )
     # Parse the tokens!
     client.parse_request_body_response(json.dumps(token_response.json()))
+    print(token_response.json())
     userinfo_endpoint = google_provider_cfg["userinfo_endpoint"]
     uri, headers, body = client.add_token(userinfo_endpoint)
     userinfo_response = requests.get(uri, headers=headers, data=body)
@@ -63,4 +67,8 @@ def callback():
 
 @app.route('/myauth/<string:uniq_id>')
 def myauth(uniq_id):
-    return db.GetAuth(uniq_id)
+    _return = ""
+    user = db.GetAuth(uniq_id)
+    for items in user:
+        _return += str(items)
+    return _return
