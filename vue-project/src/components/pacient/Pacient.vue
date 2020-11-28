@@ -2,7 +2,7 @@
     <div>
         <app-header></app-header>
         <div class="pacient-block">
-            {{ pacients[1].name }}
+            {{ pacients[pacientId].name }}
         </div>
     </div>
 </template>
@@ -146,7 +146,8 @@ export default {
                     name: 'Лукин Иосиф Платонович',
                     status: '/static/img/heart-green.png'
                 }
-            ]
+            ],
+            pacientId: ''
         }
     },
     components: {
@@ -157,8 +158,11 @@ export default {
     },
     mounted() {
         let data = {
-            session: sessionStorage.getItem('sessionId')
+            session: sessionStorage.getItem('sessionId'),
         };
+
+        this.pacientId = this.$route.params.id - 1;
+
         console.log(this.$route.params);
     }
 }
