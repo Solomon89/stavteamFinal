@@ -12,6 +12,7 @@ def hello():
 @app.route('/login', methods=['POST'])
 def login():
     param = request.get_json()
+    print(param)
     sql = '''SELECT public.users.*, public.roles.name  FROM public.users 
              left outer join public.roles on  public.users.roleid= public.roles.id 
              where users.login='%s' ''' % param['userName']
