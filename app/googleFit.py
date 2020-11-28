@@ -34,7 +34,7 @@ def auth():
 def get_google_provider_cfg():
     return requests.get("https://accounts.google.com/.well-known/openid-configuration").json()
 
-@app.route('/auth/callback/')
+@app.route('/auth/callback')
 def callback():
     id = 1#session.get('id')
     redirect("https://www.googleapis.com/auth/fitness.activity.read")
