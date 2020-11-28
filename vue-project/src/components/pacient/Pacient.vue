@@ -146,7 +146,8 @@ export default {
                     name: 'Лукин Иосиф Платонович',
                     status: '/static/img/heart-green.png'
                 }
-            ]
+            ],
+            pacientId: this.$route.params - 1
         }
     },
     components: {
@@ -158,7 +159,6 @@ export default {
     mounted() {
         let data = {
             session: sessionStorage.getItem('sessionId'),
-            pacientId: this.$route.params - 1
         };
         console.log(this.$route.params);
     }
