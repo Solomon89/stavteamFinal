@@ -2,7 +2,19 @@
     <div>
         <app-header></app-header>
         <div class="pacient-block">
-            {{ pacients[pacientId].name }}
+            <div class="left-block">
+                <div class="pacient">
+                    <div class="image">
+                        <img src="/static/img/pacient-no-img.png">
+                    </div>
+                    <div class="text-block">
+                        <div class="info">
+                            <span>{{ pacients[pacientId].name }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-block"></div>
         </div>
     </div>
 </template>
@@ -147,7 +159,7 @@ export default {
                     status: '/static/img/heart-green.png'
                 }
             ],
-            pacientId: ''
+            pacientId: 0
         }
     },
     components: {
@@ -160,10 +172,39 @@ export default {
         let data = {
             session: sessionStorage.getItem('sessionId'),
         };
-
+    },
+    created() {
         this.pacientId = this.$route.params.id - 1;
-
-        console.log(this.$route.params);
     }
 }
 </script>
+
+<style>
+.left-block, .right-block {
+    display: inline-block;
+}
+.left-block {
+    float: left;
+}
+.pacient .image {
+    float: left;
+    display: inline-block;
+    border-radius: 25px;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: #e5e5e5;
+    margin-right: 10px;
+    position: relative;
+}
+.pacient .image span {
+    position: absolute;
+    top: 0;
+}
+.pacient .image span img {
+    width: 20px;
+}
+.pacient .text-block {
+    display: inline-block;
+}
+</style>
