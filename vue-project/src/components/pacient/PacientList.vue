@@ -15,8 +15,8 @@
                                     <span></span>
                                 </div>
                                 <div class="control">
-                                    <input type="button" class="btn btn-secondary btn-lg" value="Написать">
-                                    <input type="button" class="btn btn-secondary btn-lg" value="Отправть напоминание">
+                                    <input type="button" class="btn btn-primary" value="Написать">
+                                    <input type="button" class="btn btn-outline-warning" value="Отправть напоминание">
                                 </div>
                             </div>
                         </div>
