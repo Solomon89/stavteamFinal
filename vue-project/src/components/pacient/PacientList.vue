@@ -16,7 +16,7 @@
                                 </div>
                                 <div class="control">
                                     <input type="button" class="btn btn-primary" value="Написать">
-                                    <input type="button" class="btn btn-outline-warning" value="Отправть напоминание">
+                                    <input type="button" class="btn btn-outline-warning" value="Отправить напоминание">
                                 </div>
                             </div>
                         </div>
