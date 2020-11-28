@@ -36,12 +36,12 @@ export default {
         padding-left: 20px;
     }
     #name-sort {
-        background-image: "/static/img/sort-alpha-down.png";
+        background-image: url(/static/img/sort-alpha-down.png);
     }
     #date-sort {
-        background-image: "/static/img/sort-calendar-ascending.png";
+        background-image: url(/static/img/sort-calendar-ascending.png);
     }
     #risk-sort {
-        background-image: "/static/img/sort-ascending.png";
+        background-image: url(/static/img/sort-ascending.png);
     }
 </style>
