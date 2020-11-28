@@ -9,9 +9,10 @@
     {{ form.csrf_token }}
     <div>
     {{ form.dateCreate.label }} {{ form.dateCreate(size=20) }}
-    {{ form.roofType.label }}
     </div>
-    <div>
+    <br>
+    {{ form.roofType.label }}
+    </br>>
     {% for subfield in form.roofType %}
     <tr>
         <td>{{ subfield }}</td>
