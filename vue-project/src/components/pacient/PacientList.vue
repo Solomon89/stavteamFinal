@@ -177,7 +177,7 @@ export default {
         top: 0;
     }
     .pacient .image span img {
-        widows: 20px;
+        width: 20px;
     }
     .pacient .text-block {
         display: inline-block;
