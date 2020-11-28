@@ -23,6 +23,56 @@
      <div>
     {{ form.electricity.label }} {{ form.electricity(size=20) }}
     </div>
+    <div>
+    {{ form.fuelType.label }}
+        <br>
+    {% for subfield in form.fuelType %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+    </div>
+    <div>
+    {{ form.heatType.label }}
+        <br>
+    {% for subfield in form.heatType %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+    </div>
+    <div>
+    {{ form.waterSource.label }}
+        <br>
+    {% for subfield in form.waterSource %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+    </div>
+    <div>
+    {{ form.waterTime.label }}
+        <br>
+    {% for subfield in form.waterTime %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+    </div>
+    <div>
+    {{ form.properties.label }}
+        <br>
+    {% for subfield in form.properties %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
+    </div>
     <input type="submit" value="Go">
 </form>
 </body>
