@@ -10,6 +10,7 @@ from apiclient.discovery import build
 from oauth2client.client import OAuth2WebServerFlow, AccessTokenCredentials 
 import httplib2
 import matplotlib.pyplot as plt
+from mpld3 import fig_to_html, plugins
 
 DATA_SOURCE = "derived:com.google.heart_rate.bpm:com.google.android.gms:merge_heart_rate_bpm"
 DATA_SET = "1551700038292387000-1751700038292387000"
@@ -119,7 +120,11 @@ def getGraph(id):
         value = pulseData[pulse]['value']
         days.append(startTime)
         heartRates.append(value)
-    plt.figure(figsize=(12, 7))
+
+    fgr = plt.figure(figsize=(12, 7))
     print(days[:200])
     plt.plot(days[:200], heartRates[:200], 'o-r', alpha=0.7, label="first", lw=0.5, mec='b', mew=0.5, ms=1)
     return fig_to_html(fgr)
+
+
+    
