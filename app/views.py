@@ -7,6 +7,8 @@ from flask import render_template
 from app import forms
 import matplotlib.pyplot as plt
 from mpld3 import fig_to_html, plugins
+import numpy as np
+
 
 @app.route("/")
 @app.route("/index")
@@ -47,5 +49,16 @@ from app import googleFit
 
 @app.route('/predict/<string:id>')
 def predict(id):
+    x = np.arange(1, 8)
+    y = np.random.randint(1, 20, size = 7)
+
+    fig, ax = plt.subplots()
+
+    ax.bar(x, y)
+
+    ax.set_facecolor('seashell')
+    fig.set_facecolor('floralwhite')
+    fig.set_figwidth(12)    #  ширина Figure
+    fig.set_figheight(6)    #  высота Figure
     #todo function to predict by id
     return fig_to_html(fig)
