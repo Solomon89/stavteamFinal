@@ -1,0 +1,5 @@
+   div.cite { /* Абзац с классом cite */
+    margin-left: 20px; /* Отступ слева */
+    border-left: 1px solid navy; /* Граница слева от текста */
+    padding-left: 15px; /* Расстояние от линии до текста */
+   }

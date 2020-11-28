@@ -25,14 +25,16 @@
                 <div>{{ form.dateCreate.label }} {{ form.dateCreate(size=20) }}</div>
             </div>
             <div class="row">
-                <div>{{ form.roofType.label }}
-                    <br> {% for subfield in form.roofType %}
-                    <tr>
-                        <td>{{ subfield }}</td>
-                        <td>{{ subfield.label }}</td>
-                    </tr>
-                    {% endfor %}
-                </div>
+                    {{ form.roofType.label }}
+                    <br>
+                    <div class="cite">
+                        {% for subfield in form.roofType %}
+                        <div class="col">
+                            {{ subfield }}
+                            {{ subfield.label }}
+                        </div>
+                        {% endfor %}
+                    </div>
             </div>
             <div class="row">
                 <div>{{ form.electricity.label }} {{ form.electricity(size=20) }}</div>
@@ -102,8 +104,8 @@
             </div>
             <div>{{ form.ventil.label }}{{ form.ventil}}</div>
             <div>{{ form.coockingOutside.label }}{{ form.coockingOutside}}</div>
-            <h1>Послушайте следующие утверждения и отметьте наиболее подходящий вариант</h1>
-            <h2>Как часто возникает то, что вам и членам вашей семьи не хватает еды?</h2>
+            <h2>Послушайте следующие утверждения и отметьте наиболее подходящий вариант</h2>
+            <h3>Как часто возникает то, что вам и членам вашей семьи не хватает еды?</h3>
             <div>
                 {{ form.notEnoughFoodNow.label }}
                 <br> {% for subfield in form.notEnoughFoodNow %}
@@ -122,7 +124,7 @@
                 </tr>
                 {% endfor %}
             </div>
-            <h2>Как часто возникало то, что вам и членам вашей семьи не хватало средств на покупку одежды? </h2>
+            <h3>Как часто возникало то, что вам и членам вашей семьи не хватало средств на покупку одежды? </h3>
             <div>
                 {{ form.notEnoughClothesNow.label }}
                 <br> {% for subfield in form.notEnoughClothesNow %}
@@ -141,7 +143,7 @@
                 </tr>
                 {% endfor %}
             </div>
-            <h2>У вас имеются трудности с оплатой счетов? (за жил. площадь, электричество, теплоснабжение и др.)? </h2>
+            <h3>У вас имеются трудности с оплатой счетов? (за жил. площадь, электричество, теплоснабжение и др.)? </h3>
             <div>
                 {{ form.notEnoughPayNow.label }}
                 <br> {% for subfield in form.notEnoughPayNow %}
@@ -160,7 +162,7 @@
                 </tr>
                 {% endfor %}
             </div>
-            <h1>Чем (из следующего) владеет ваше домашнее хозяйство?</h1>
+            <h3>Чем (из следующего) владеет ваше домашнее хозяйство?</h3>
             <div>{{ form.assets.label }}{{ form.assets}}</div>
             <div>
                 {{ form.incomingPartForFood.label }}
@@ -171,7 +173,7 @@
                 </tr>
                 {% endfor %}
             </div>
-            <h1>Выберите высказывание, которое наиболее точно описывает финансовые возможности Вашей семьи</h1>
+            <h3>Выберите высказывание, которое наиболее точно описывает финансовые возможности Вашей семьи</h3>
             <div>{{ form.notEnoughForNecessary.label }}{{ form.notEnoughForNecessary}}</div>
             <div>{{ form.necessaryNotExpensive.label }}{{ form.necessaryNotExpensive}}</div>
             <div>{{ form.expensiveSometimes.label }}{{ form.expensiveSometimes}}</div>
