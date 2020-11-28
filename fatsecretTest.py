@@ -1,7 +1,7 @@
 from fatsecret import Fatsecret
-
-clientID = 'cbf61802962b4846a6b493d8cac33880'
-clientSecret = '624f154d6b5d4a5581cafd0312996927'
+import psycopg2
+clientID = 'c1ffa8c2349d498b878ddc82422bbe2d'
+clientSecret = '58ba7b4983ac4b0187fd0c68999e1d50'
 
 fs = Fatsecret(clientID, clientSecret)
 
@@ -11,6 +11,20 @@ print("Browse to the following URL in your browser to authorize access:\n{}".for
 
 pin = input("Enter the PIN provided by FatSecret: ")
 session_token = fs.authenticate(pin)
+date_time_str='11/08/20'
+foods=fs.foods_search('Pineapple')
 
-foods = fs.profile_get()
-print(foods)
+SERVER = '176.15.105.107'
+DATABASE = 'stavteamdb'
+UID = 'stavteamdb'
+PWD = '111111'
+cnxn = psycopg2.connect(dbname=DATABASE, user=UID,
+                        password=PWD, host=SERVER)
+cursor = cnxn.cursor()
+for food in foods:
+    cursor.execute("INSERT INTO public.fatsecretfoods "+
+                    "(name, fatsecretid) "+
+                    "VALUES('"+food['food_name'].replace("'","''")+"', "+str(food['food_id'])+"); ")
+    cnxn.commit()
+cnxn.close()
+print(len(foods))
