@@ -2,9 +2,9 @@
     <div>
         <div class="tools">
             <ul class="sort">
-                <li id="name-sort">По фамилии</li>
-                <li id="date-sort">По дате</li>
-                <li id="risk-sort">По уровню риска</li>
+                <li id="name-sort"><a href="#">По фамилии</a></li>
+                <li id="date-sort"><a href="#">По дате</a></li>
+                <li id="risk-sort"><a href="#">По уровню риска</a></li>
             </ul>
         </div>
     </div>
@@ -34,6 +34,9 @@ export default {
         display: inline-block;
         font-size: 12px;
         padding-left: 20px;
+        background-repeat: no-repeat;
+        background-repeat: no-repeat;
+        background-size: 16px;
     }
     #name-sort {
         background-image: url(/static/img/sort-alpha-down.png);
