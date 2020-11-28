@@ -64,10 +64,7 @@
     <div>{{ form.moneyFoodForHouseHold.label }} {{ form.moneyFoodForHouseHold(size=20) }}</div>
     <div>{{ form.hasCult.label }} {{ form.hasCult(size=20) }}</div>
     <div>{{ form.cultSquare.label }} {{ form.cultSquare(size=20) }}</div>
-    <div>{{ form.cultSquare.label }} {{ form.cultSquare(size=20) }}</div>
-        <div>
-        {{ form.units.label }}
-        <br>
+    <div>{{ form.cultSquare.label }} {{ form.cultSquare(size=20) }}
         {% for subfield in form.units %}
         <tr>
             <td>{{ subfield }}</td>
@@ -75,7 +72,31 @@
         </tr>
         {% endfor %}
     </div>
+    <div>
+        {{ form.coocking.label }}
+        <br>
+        {% for subfield in form.coocking %}
+        <tr>
+            <td>{{ subfield }}</td>
+            <td>{{ subfield.label }}</td>
+        </tr>
+        {% endfor %}
+    </div>
+    <div>{{ form.ventil.label }}{{ form.ventil}}</div>
+    <div>{{ form.coockingOutside.label }} {{ form.coockingOutside(size=20) }}
 
+
+
+    <div>
+        {{ form.coocking.label }}
+        <br>
+        {% for subfield in form.coocking %}
+        <tr>
+            <td>{{ subfield }}</td>
+            <td>{{ subfield.label }}</td>
+        </tr>
+        {% endfor %}
+    </div>
     <input type="submit" value="Go">
 </form>
 </body>
