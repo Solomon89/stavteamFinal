@@ -1,11 +1,27 @@
-from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, TextAreaField, DateField, SelectField, RadioField
+from flask_wtf import FlaskForm, Form
+from wtforms import widgets, StringField, SubmitField, TextAreaField, DateField, SelectField, RadioField, \
+    BooleanField, SelectMultipleField
 from wtforms.validators import DataRequired, Email
 from app import dbFunctions
 
+class MultiCheckboxField(SelectMultipleField):
+    widget = widgets.ListWidget(prefix_label=False)
+    option_widget = widgets.CheckboxInput()
+
 class HouseHold(FlaskForm):
-    dateCreate = DateField("Дата заполнения: ", validators=[DataRequired()])
-    roofType= RadioField('1. Тип крыши главного дома (выбрать только один вариант)',choices=dbFunctions.getRoofTypes())
-    #email = StringField("Email: ", validators=[Email()])
-    #message = TextAreaField("Message", validators=[DataRequired()])
+    dateCreate = DateField("Дата заполнения: ", validators=[DataRequired()], format='%Y-%m-%d')
+    roofType = RadioField('Тип крыши главного дома (выбрать только один вариант)', choices=dbFunctions.getRoofTypes())
+    electricity = BooleanField('Наличие электричества в доме')
+    fuelType = RadioField('Основной тип топлива, используемый для приготовления пищи (выбрать только один вариант)',
+                          choices=dbFunctions.getFuelTypes())
+    heatType = RadioField('Основной источник теплоснабжения в холодный / дождливый сезон (выбрать только один вариант)',
+                          choices=dbFunctions.getHeatTypes())
+    waterSource = RadioField('Основной источник питьевой воды (выбрать только один вариант)',
+                             choices=dbFunctions.getWaterSources())
+    waterTime = RadioField('Если в доме нет системы водоснабжения, сколько времени требуется для доставки воды (включая время, затрачиваемое на то, чтобы добраться до источника, набрать воды и вернуться обратно)',
+                           choices=dbFunctions.getWaterTime())
+    properties = MultiCheckboxField('Наличие собственности следующих типов (отметить все соответствующие окошки)',
+                                    choices=dbFunctions.getProperties())
+    # email = StringField("Email: ", validators=[Email()])
+    # message = TextAreaField("Message", validators=[DataRequired()])
     submit = SubmitField("Submit")

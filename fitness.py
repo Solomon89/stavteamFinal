@@ -87,4 +87,4 @@ for hr in data['point']:
     endData[str(i)] = {'startTime': dt1, 'endTime': dt2, 'activityType': hr['value'][0]['intVal']}
     i += 1
 activityData = endData
-
+print(activityData)

@@ -5,7 +5,7 @@ deleteInterval = 3600
 SERVER = '176.15.105.107'
 DATABASE = 'stavteamdb'
 UID = 'stavteamdb'
-PWD = '111111' 
+PWD = '111111'
 
 
 def killExpiredSessions(interval):
@@ -36,6 +36,7 @@ def killSession(uid):
     execSQL(sql, True, False)
     return True
 
+
 def execSQL(sql, param, needFeatch):
     cnxn = psycopg2.connect(dbname=DATABASE, user=UID,
                             password=PWD, host=SERVER)
@@ -64,7 +65,34 @@ def checkToNull(param):
         s = " '" + param + "',"
     return s
 
+
 def getRoofTypes():
-    sql='SELECT id, "name" FROM public.roof_types;'
-    rows=execSQL(sql,None,True)
+    sql = 'SELECT id, "name" FROM public.roof_types;'
+    rows = execSQL(sql, None, True)
+    return rows
+
+
+def getFuelTypes():
+    sql = 'SELECT id, "name" FROM public.fuel_types;'
+    rows = execSQL(sql, None, True)
+    return rows
+
+def getHeatTypes():
+    sql = 'SELECT id, "name" FROM public.heat_sources;'
+    rows = execSQL(sql, None, True)
+    return rows
+
+def getWaterSources():
+    sql = 'SELECT id, "name" FROM public.water_sources;'
+    rows = execSQL(sql, None, True)
+    return rows
+
+def getWaterTime():
+    sql = 'SELECT id, "name" FROM public.water_times;'
+    rows = execSQL(sql, None, True)
+    return rows
+
+def getProperties():
+    sql = 'SELECT id, "name" FROM public.properties_types;'
+    rows = execSQL(sql, None, True)
     return rows

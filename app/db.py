@@ -8,6 +8,14 @@ DATABASE = 'stavteamdb'
 UID = 'stavteamdb'
 PWD = '111111'
 
+def GetGoogleAuth(userid):
+    sql = "SELECT * FROM usergoogle where userid = '" +str(userid)+ "'"
+    value = execSQL(sql, True, True)
+    if(len(value) > 0 ):
+        return value[0]
+    else:
+        return None
+
 
 def GetAuth(unique_id):
     _return = ""
@@ -19,7 +27,8 @@ def GetAuth(unique_id):
 
 def SaveAuth(GoogleUser):
 
-    sql = "insert into usergoogle (name,email,profile_pic,unique_id) values (" +GoogleUser.inLineToSave() + ")"
+    sql = "insert into usergoogle (name,email,profile_pic,unique_id,access_token,userid) values (" +GoogleUser.inLineToSave() + ")"
+    print(sql)
     execSQL(sql, True, False)
 
 

@@ -1,18 +1,25 @@
 from stavteam import app,client
 from flask import render_template
-from flask import Flask, redirect, request, url_for
+from flask import Flask, redirect, request, url_for, session
 from app import db
 import requests
 import json
 from app.models import GoogleUser
 
+@app.route('/auth/<int:userId>')
+def auth2(userId):
+    user = db.GetGoogleAuth(userId)
+    if(user == None):
+        session['id'] = str(userId)
+        return redirect(url_for("auth"))
 
+    return str(user)
 @app.route('/auth')
 def auth():
     # Find out what URL to hit for Google login
     google_provider_cfg = get_google_provider_cfg()
     authorization_endpoint = google_provider_cfg["authorization_endpoint"]
-
+    
     # Use library to construct the request for Google login and provide
     # scopes that let you retrieve user's profile from Google
     request_uri = client.prepare_request_uri(
@@ -29,6 +36,7 @@ def get_google_provider_cfg():
 
 @app.route('/auth/callback')
 def callback():
+    id =  session['id'] 
     redirect("https://www.googleapis.com/auth/fitness.activity.read")
     # Get authorization code Google sent back to you
     code = request.args.get("code")
@@ -57,7 +65,8 @@ def callback():
         users_email = userinfo_response.json()["email"]
         picture = userinfo_response.json()["picture"]
         users_name = userinfo_response.json()["given_name"]
-        User = GoogleUser.GoogleUser(unique_id,users_email,picture,users_name)
+        access_token = token_response.json()["access_token"]
+        User = GoogleUser.GoogleUser(unique_id,users_email,picture,users_name,id,access_token)
         db.SaveAuth(User)
     else:
         return "User email not available or not verified by Google.", 400
@@ -74,6 +83,3 @@ def myauth(uniq_id):
     return _return
 
 
-@app.route('/mydayactivity/<string:uniq_id>')
-def mydayactivity(dataSourceId,datasetId):
-    
