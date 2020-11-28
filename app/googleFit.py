@@ -65,7 +65,7 @@ def callback():
         users_email = userinfo_response.json()["email"]
         picture = userinfo_response.json()["picture"]
         users_name = userinfo_response.json()["given_name"]
-        access_token = userinfo_response.json()["access_token"]
+        access_token = token_response.json()["access_token"]
         User = GoogleUser.GoogleUser(unique_id,users_email,picture,users_name,id,access_token)
         db.SaveAuth(User)
     else:
