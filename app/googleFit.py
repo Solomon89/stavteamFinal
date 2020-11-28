@@ -14,17 +14,16 @@ def auth2(userId):
 
     return str(user)
 
-@app.route('/auth')
 def auth(id):
     # Find out what URL to hit for Google login
     google_provider_cfg = get_google_provider_cfg()
     authorization_endpoint = google_provider_cfg["authorization_endpoint"]
-
+    session['id'] = id
     # Use library to construct the request for Google login and provide
     # scopes that let you retrieve user's profile from Google
     request_uri = client.prepare_request_uri(
         authorization_endpoint,
-        redirect_uri=request.base_url + "/callback/" + str(id) + "/",
+        redirect_uri=request.base_url + "/callback/",
         scope=["openid", "email", "profile",'https://www.googleapis.com/auth/fitness.heart_rate.read','https://www.googleapis.com/auth/fitness.activity.read',
                'https://www.googleapis.com/auth/fitness.sleep.read'],
     )
@@ -34,8 +33,9 @@ def auth(id):
 def get_google_provider_cfg():
     return requests.get("https://accounts.google.com/.well-known/openid-configuration").json()
 
-@app.route('/auth/callback/<int:id>/')
-def callback(id):
+@app.route('/auth/callback/')
+def callback():
+    id = session['id']
     redirect("https://www.googleapis.com/auth/fitness.activity.read")
     # Get authorization code Google sent back to you
     code = request.args.get("code")
