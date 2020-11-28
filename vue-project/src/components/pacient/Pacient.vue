@@ -2,7 +2,7 @@
     <div>
         <app-header></app-header>
         <div class="pacient-block">
-            {{ pacients[this.$route.params - 1].name }}
+            {{ pacients[data.pacientId].name }}
         </div>
     </div>
 </template>
@@ -157,7 +157,8 @@ export default {
     },
     mounted() {
         let data = {
-            session: sessionStorage.getItem('sessionId')
+            session: sessionStorage.getItem('sessionId'),
+            pacientId: this.$route.params - 1
         };
         console.log(this.$route.params);
     }
