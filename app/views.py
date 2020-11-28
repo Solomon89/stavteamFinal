@@ -14,7 +14,7 @@ def hello():
 @app.route('/houseHold', methods=['POST','GET'])
 def houseHold():
     if request.method == 'GET':
-        render_template('/templates/houseHold.html', form=forms.HouseHold())
+        render_template('houseHold.html', form=forms.HouseHold())
 
 
 @app.route('/login', methods=['POST'])
