@@ -96,3 +96,43 @@ def getProperties():
     sql = 'SELECT id, "name" FROM public.properties_types;'
     rows = execSQL(sql, None, True)
     return rows
+
+def getUnits():
+    sql = 'SELECT id, "name" FROM public.square_units;'
+    rows = execSQL(sql, None, True)
+    return rows
+
+def getCoockingPlaces():
+    sql = 'SELECT id, "name" FROM public.coocking_places;'
+    rows = execSQL(sql, None, True)
+    return rows
+
+def getVentilations():
+    sql = 'SELECT id, "name" FROM public.ventilations;'
+    rows = execSQL(sql, None, True)
+    return rows
+
+def getAnswers():
+    sql = 'SELECT id, "name" FROM public.answers;'
+    rows = execSQL(sql, None, True)
+    return rows
+
+def getAssets():
+    sql = 'SELECT id, "name" FROM public.assets;'
+    rows = execSQL(sql, None, True)
+    return rows
+
+def getIncomingParts():
+    sql = 'SELECT id, "name" FROM public.income_parts;'
+    rows = execSQL(sql, None, True)
+    return rows
+
+def getIncomeLevels():
+    sql = 'SELECT id, "name" FROM public.income_levels;'
+    rows = execSQL(sql, None, True)
+    return rows
+
+def getHousingTypes():
+    sql = 'SELECT id, "name" FROM public.housing_types;'
+    rows = execSQL(sql, None, True)
+    return rows

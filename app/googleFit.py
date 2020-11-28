@@ -112,9 +112,13 @@ def getGraph(id):
         endData[str(i)] = {'startTime': dt, 'value': hr['value'][0]['fpVal']}
         i += 1
     pulseData = endData
-
-    days=list(endData.keys())
-    heartRates=list(endData.values())
+    days =[]
+    heartRates=[]
+    for pulse in pulseData:
+        startTime = str(pulse['startTime'])
+        value = pulse['value']
+        days.append(startTime)
+        heartRates.append(value)
     plt.figure(figsize=(12, 7))
     print(days[:200])
     plt.plot(days[:200], heartRates[:200], 'o-r', alpha=0.7, label="first", lw=0.5, mec='b', mew=0.5, ms=1)

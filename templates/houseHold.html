@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Анкета по домашним хозяйствам</title>
 </head>
 <body>
 <form method="POST" action="/">
     {{ form.csrf_token }}
+    <h1>Анкета по домашним хозяйствам</h1>>
     <div>
     {{ form.dateCreate.label }} {{ form.dateCreate(size=20) }}
     </div>
@@ -65,6 +66,9 @@
     </div>
     <div>
     {{ form.properties.label }}{{ form.properties}}
+    </div>
+    <div>
+    {{ form.incoming.label }} {{ form.incoming(size=20) }}
     </div>
     <input type="submit" value="Go">
 </form>
