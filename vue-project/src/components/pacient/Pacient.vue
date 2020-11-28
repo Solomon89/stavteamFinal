@@ -2,7 +2,7 @@
     <div>
         <app-header></app-header>
         <div class="pacient-block">
-            {{ pacients[pacientId].name }}
+            {{ pacient.name }}
         </div>
     </div>
 </template>
@@ -147,6 +147,7 @@ export default {
                     status: '/static/img/heart-green.png'
                 }
             ],
+            pacient: {},
             pacientId: ''
         }
     },
@@ -162,6 +163,7 @@ export default {
         };
 
         this.pacientId = this.$route.params - 1;
+        this.pacient = this.pacients[this.pacientId];
 
         console.log(this.$route.params);
     }
