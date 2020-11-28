@@ -26,7 +26,7 @@ export default {
         let data = {
             session: sessionStorage.getItem('sessionId')
         };
-        console.log(router.props);
+        console.log(route.params);
     }
 }
 </script>
