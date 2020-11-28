@@ -18,6 +18,7 @@ def login():
     rows = dbFunctions.execSQL(sql, None, True)
     if len(rows) > 0:
         for row in rows:
+            print('password is ', row[5])
             if row[5].strip() == param['userPass']:
                 uid = dbFunctions.makeSession(row[0])
                 userInfo = {'FAM': row[1], 'IM': row[2], 'OT': row[3], 'ROLE':row[7],  'SESSION': uid}
