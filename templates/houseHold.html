@@ -25,12 +25,14 @@
                 <div>{{ form.dateCreate.label }} {{ form.dateCreate(size=20) }}</div>
             </div>
             <div class="row">
-                <div>{{ form.roofType.label }}
-                    <br> {% for subfield in form.roofType %}
-                    <tr>
-                        <td>{{ subfield }}</td>
-                        <td>{{ subfield.label }}</td>
-                    </tr>
+                <div>
+                    {{ form.roofType.label }}
+                    <br>
+                    {% for subfield in form.roofType %}
+                    <div class="row">
+                        {{ subfield }}
+                        {{ subfield.label }}
+                    </div>
                     {% endfor %}
                 </div>
             </div>
