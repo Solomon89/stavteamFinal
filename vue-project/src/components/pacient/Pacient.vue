@@ -4,13 +4,31 @@
         <div class="pacient-block">
             <div class="left-block">
                 <div class="pacient">
-                    <div class="image">
-                        <img src="/static/img/pacient-no-img.png">
-                    </div>
-                    <div class="text-block">
-                        <div class="info">
-                            <span>{{ pacients[pacientId].name }}</span>
+                    <div class="header-info">
+                        <div class="image">
+                            <img src="/static/img/pacient-no-img.png">
                         </div>
+                        <div class="text-block">
+                            <div class="info">
+                                <span>{{ pacients[pacientId].name }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pacient-info">
+                        <table>
+                            <thead>
+                                <tr><td colspan="2"><strong>Основные сведения</strong></td><td></td></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Место проживания:</td><td>pacients[pacientId].name</td></tr>
+                                <tr><td>Пол:</td><td>pacients[pacientId].gender</td></tr>
+                                <tr><td>Семья:</td><td>pacients[pacientId].family</td></tr>
+                                <tr><td>Образование:</td><td>pacients[pacientId].education</td></tr>
+                                <tr><td>Профессия:</td><td>pacients[pacientId].profession</td></tr>
+                                <tr><td>Количество человек в домохозяйстве:</td><td>pacients[pacientId].livingPeople</td></tr>
+                                <tr><td>Ежемесячный доход:</td><td>pacients[pacientId].salary</td></tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -30,133 +48,301 @@ export default {
                     id: '1',
                     photo: '',
                     name: 'Крестовоздвиженский Николай Константинович',
-                    status: '/static/img/heart-red.png'
+                    status: '/static/img/heart-red.png',
+                    address: 'г. Москва',
+                    gender: 'мужской',
+                    family: 'В разводе',
+                    education: 'Высшее',
+                    profession: 'Инженер',
+                    livingPeople: '2',
+                    salary: '50000 руб',
+                    diagnosis: 'Эссенциальная (первичная) гипертензия',
+                    mkb: 'I10',
+                    smoke: 'Нет',
+                    alkohol: 'Регулярно, легкий',
+                    sleep: 'Засыпание 23:00, просыпание 6:10',
+                    sport: 'Данные о спорте',
+                    eat: 'Данные о питании'
                 },
                 {
                     id: '2',
                     photo: '',
                     name: 'Николаенко Александр Александрович',
-                    status: '/static/img/heart-green.png'
+                    status: '/static/img/heart-green.png',
+                    address: 'г. Люберцы',
+                    gender: 'мужской',
+                    family: 'В браке',
+                    education: 'Среднее-специальное',
+                    profession: 'Механик-водитель',
+                    livingPeople: '1',
+                    salary: '25000',
+                    diagnosis: 'Митральная (клапанная) недостаточность',
+                    mkb: 'I34.0',
+                    smoke: 'Да',
+                    alkohol: 'Нет',
+                    sleep: 'Засыпание 22:42, просыпание 6:47',
+                    sport: 'Данные о спорте',
+                    eat: 'Данные о питании'
                 },
                 {
                     id: '3',
                     photo: '',
                     name: 'Коновалова Любава Витальевна',
-                    status: '/static/img/heart-red.png'
+                    status: '/static/img/heart-red.png',
+                    address: 'г. Курск',
+                    gender: 'женский',
+                    family: 'В браке',
+                    education: 'Высшее',
+                    profession: 'экономист',
+                    livingPeople: '3',
+                    salary: '35000',
+                    diagnosis: 'Бессимптомная ишемия миокарда',
+                    mkb: 'I25.6',
+                    smoke: 'Нет',
+                    alkohol: 'Нет',
+                    sleep: 'Засыпание 23:24, просыпание 6:07',
+                    sport: 'Данные о спорте',
+                    eat: 'Данные о питании'
                 },
                 {
                     id: '4',
                     photo: '',
                     name: 'Волков Руслан Антонинович',
-                    status: '/static/img/heart-red.png'
+                    status: '/static/img/heart-red.png',
+                    address: 'г. Москва',
+                    gender: 'мужской',
+                    family: 'В браке',
+                    education: 'Высшее',
+                    profession: 'Военнослужаший',
+                    livingPeople: '2',
+                    salary: '40000',
+                    diagnosis: 'Повторный инфаркт миокарда',
+                    mkb: 'I22',
+                    smoke: 'Да, 5-6 сигарет в день',
+                    alkohol: 'Редко, легкий',
+                    sleep: 'Засыпание 23:02, просыпание 5:34',
+                    sport: 'Данные о спорте',
+                    eat: 'Данные о питании'
                 },
                 {
                     id: '5',
                     photo: '',
                     name: 'Ермакова Владислава Владленовна',
-                    status: '/static/img/heart-green.png'
+                    status: '/static/img/heart-green.png',
+                    address: 'г. Москва',
+                    gender: 'женский',
+                    family: 'В браке',
+                    education: 'среднее',
+                    profession: 'Медицинский работник',
+                    livingPeople: '4',
+                    salary: '24000',
+                    diagnosis: 'Митральная (клапанная) недостаточность',
+                    mkb: 'I34.0',
+                    smoke: 'Нет',
+                    alkohol: 'Нет',
+                    sleep: 'Засыпание 22:02, просыпание 5:57',
+                    sport: 'Данные о спорте',
+                    eat: 'Данные о питании'
                 },
                 {
                     id: '6',
                     photo: '',
                     name: 'Ефимова Ландыш Валерьевна',
-                    status: '/static/img/heart-green.png'
+                    status: '/static/img/heart-green.png',
+                    address: 'г. Москва',
+                    gender: 'Женский',
+                    family: 'Разведена',
+                    education: 'Среднее',
+                    profession: 'Разнорабочая',
+                    livingPeople: '1',
+                    salary: '18000',
+                    diagnosis: 'Алкогольная кардиомиопатия',
+                    mkb: 'I42.6',
+                    smoke: 'Да, регулярно',
+                    alkohol: 'Крепкий, регулярно',
+                    sleep: 'Засыпание 00:02, просыпание 8:57',
+                    sport: 'Данные о спорте',
+                    eat: 'Данные о питании'
                 },
                 {
                     id: '7',
                     photo: '',
                     name: 'Степанов Илларион Ярославович',
-                    status: '/static/img/heart-green.png'
+                    status: '/static/img/heart-green.png',
+                    address: 'г. Белгород',
+                    gender: 'мужской',
+                    family: 'В браке',
+                    education: 'Высшее',
+                    profession: 'Юрист',
+                    livingPeople: '3',
+                    salary: '42000',
+                    diagnosis: 'Митральная (клапанная) недостаточность',
+                    mkb: 'I34.0',
+                    smoke: 'Нет',
+                    alkohol: 'Нет',
+                    sleep: 'Засыпание 22:56, просыпание 6:45',
+                    sport: 'Данные о спорте',
+                    eat: 'Данные о питании'
                 },
                 {
                     id: '8',
                     photo: '',
                     name: 'Тихонова Калерия Рудольфовна',
-                    status: '/static/img/heart-green.png'
+                    status: '/static/img/heart-green.png',
+                    address: 'г. Санкт-Петербург',
+                    gender: 'Женский',
+                    family: 'В браке',
+                    education: 'Высшее',
+                    profession: 'Юрист',
+                    livingPeople: '3',
+                    salary: '38000 руб',
+                    diagnosis: 'Кардиомиопатия',
+                    mkb: 'I42',
+                    smoke: 'Нет',
+                    alkohol: 'Нет',
+                    sleep: 'Засыпание 22:42, просыпание 6:15',
+                    sport: 'Данные о спорте',
+                    eat: 'Данные о питании'
                 },
                 {
                     id: '9',
                     photo: '',
                     name: 'Максимов Оскар Евсеевич',
-                    status: '/static/img/heart-red.png'
+                    status: '/static/img/heart-red.png',
+                    address: 'г. Москва',
+                    gender: 'мужской',
+                    family: 'Разведен',
+                    education: 'Среднее-специальное',
+                    profession: 'Электрик',
+                    livingPeople: '1',
+                    salary: '22000',
+                    diagnosis: 'Острый перикардит',
+                    mkb: 'I30',
+                    smoke: 'Нет',
+                    alkohol: 'Легкий, 1-2 раза в неделю',
+                    sleep: 'Засыпание 22:57, просыпание 6:33',
+                    sport: 'Данные о спорте',
+                    eat: 'Данные о питании'
                 },
                 {
                     id: '10',
                     photo: '',
                     name: 'Веселова Виргиния Степановна',
-                    status: '/static/img/heart-green.png'
+                    status: '/static/img/heart-green.png',
+                    address: 'г. Краснодар',
+                    gender: 'женский',
+                    family: 'В браке',
+                    education: 'Среднее-специальное',
+                    profession: 'Продавец',
+                    livingPeople: '2',
+                    salary: '21000',
+                    diagnosis: 'Кардиомиопатия',
+                    mkb: 'I42',
+                    smoke: 'Нет',
+                    alkohol: 'Нет',
+                    sleep: 'Засыпание 22:42, просыпание 6:15',
+                    sport: 'Данные о спорте',
+                    eat: 'Данные о питании'
                 },
                 {
                     id: '11',
                     photo: '',
                     name: 'Овчинникова Ландыш Ивановна',
-                    status: '/static/img/heart-green.png'
+                    status: '/static/img/heart-green.png',
+                    address: 'г. Москва',
+                    gender: 'Женский',
+                    family: 'В браке',
+                    education: 'Высшее',
+                    profession: 'Служащий',
+                    livingPeople: '3',
+                    salary: '32000',
+                    diagnosis: 'Митральная (клапанная) недостаточность',
+                    mkb: 'I34.0',
+                    smoke: 'Нет',
+                    alkohol: 'Нет',
+                    sleep: 'Засыпание 22:56, просыпание 6:45',
+                    sport: 'Данные о спорте',
+                    eat: 'Данные о питании'
                 },
                 {
                     id: '12',
                     photo: '',
                     name: 'Козлов Осип Андреевич',
-                    status: '/static/img/heart-green.png'
+                    status: '/static/img/heart-green.png',
+                    address: 'г. Москва',
+                    gender: 'мужской',
+                    family: 'В браке',
+                    education: 'Высшее',
+                    profession: 'Военнослужаший',
+                    livingPeople: '2',
+                    salary: '40000',
+                    diagnosis: 'Митральная (клапанная) недостаточность',
+                    mkb: 'I34.0',
+                    smoke: 'Да, 5-6 сигарет в день',
+                    alkohol: 'Редко, легкий',
+                    sleep: 'Засыпание 23:02, просыпание 5:34',
+                    sport: 'Данные о спорте',
+                    eat: 'Данные о питании'
                 },
                 {
                     id: '13',
                     photo: '',
                     name: 'Дьячкова Глория Игоревна',
-                    status: '/static/img/heart-red.png'
+                    status: '/static/img/heart-red.png',
+                    address: 'г. Москва',
+                    gender: 'Женский',
+                    family: 'Разведена',
+                    education: 'Среднее',
+                    profession: 'Уборщица',
+                    livingPeople: '1',
+                    salary: '16000',
+                    diagnosis: 'Повторный инфаркт миокарда',
+                    mkb: 'I22',
+                    smoke: 'Нет',
+                    alkohol: 'Редко, легкий',
+                    sleep: 'Засыпание 22:57, просыпание 6:33',
+                    sport: 'Данные о спорте',
+                    eat: 'Данные о питании'
                 },
                 {
                     id: '14',
                     photo: '',
                     name: 'Зайцева Ева Мэлоровна',
-                    status: '/static/img/heart-green.png'
+                    status: '/static/img/heart-green.png',
+                    address: 'г. Ростов-на-Дону',
+                    gender: 'Женский',
+                    family: 'В браке',
+                    education: 'Высшее',
+                    profession: 'Бухгалтер',
+                    livingPeople: '2',
+                    salary: '35000',
+                    diagnosis: 'Митральная (клапанная) недостаточность',
+                    mkb: 'I34.0',
+                    smoke: 'Нет',
+                    alkohol: 'Редко',
+                    sleep: 'Засыпание 22:59, просыпание 6:10',
+                    sport: 'Данные о спорте',
+                    eat: 'Данные о питании'
                 },
                 {
                     id: '15',
                     photo: '',
                     name: 'Беспалов Леонтий Мэлорович',
-                    status: '/static/img/heart-green.png'
-                },
-                {
-                    id: '16',
-                    photo: '',
-                    name: 'Сафонов Вольдемар Кириллович',
-                    status: '/static/img/heart-green.png'
-                },
-                {
-                    id: '17',
-                    photo: '',
-                    name: 'Ершов Пантелей Парфеньевич',
-                    status: '/static/img/heart-green.png'
-                },
-                {
-                    id: '18',
-                    photo: '',
-                    name: 'Тетерин Ян Игнатьевич',
-                    status: '/static/img/heart-red.png'
-                },
-                {
-                    id: '19',
-                    photo: '',
-                    name: 'Романова Ярослава Рубеновна',
-                    status: '/static/img/heart-green.png'
-                },
-                {
-                    id: '20',
-                    photo: '',
-                    name: 'Назаров Овидий Николаевич',
-                    status: '/static/img/heart-green.png'
-                },
-                {
-                    id: '21',
-                    photo: '',
-                    name: 'Кондратьева Евгения Агафоновна',
-                    status: '/static/img/heart-red.png'
-                },
-                {
-                    id: '22',
-                    photo: '',
-                    name: 'Лукин Иосиф Платонович',
-                    status: '/static/img/heart-green.png'
+                    status: '/static/img/heart-green.png',
+                    address: 'г. Москва',
+                    gender: 'мужской',
+                    family: 'В браке',
+                    education: 'Высшее',
+                    profession: 'Экономист',
+                    livingPeople: '',
+                    salary: '45000',
+                    diagnosis: 'Митральная (клапанная) недостаточность',
+                    mkb: 'I34.0',
+                    smoke: 'Нет',
+                    alkohol: 'Нет',
+                    sleep: 'Засыпание 23:15, просыпание 6:00',
+                    sport: 'Данные о спорте',
+                    eat: 'Данные о питании'
                 }
             ],
             pacientId: 0
