@@ -15,7 +15,7 @@ def GetAuth():
     return value
 
 def SaveAuth(GoogleUser):
-    sql = "insert into authgoogle(name,email,profile_pic,unique_id) values " +GoogleUser.inLineToSave()
+    sql = "insert into authgoogle(name,email,profile_pic,unique_id) values (" +GoogleUser.inLineToSave() + ")"
     execSQL(sql, True, False)
 
 
