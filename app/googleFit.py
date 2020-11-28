@@ -10,7 +10,7 @@ from app.models import GoogleUser
 def auth2(userId):
     user = db.GetGoogleAuth(userId)
     if(user == None):
-        session['id'] = str(id)
+        session['id'] = str(userId)
         return redirect(url_for("auth"))
 
     return str(user)
