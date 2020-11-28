@@ -36,7 +36,8 @@ export default {
     .header-container {
         padding: 0 20px;
         height: 60px;
-        box-shadow: 0 1px 10px 0px grey;
+        background-color: #828282;
+        color: #ffffff;
     }
     .header-logo {
         display: inline-block;
