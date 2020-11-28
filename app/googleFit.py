@@ -123,7 +123,6 @@ def getHeartRate(id):
         heartRates.append(value)
 
     fgr = plt.figure(figsize=(12, 7))
-    print(days[:200])
     plt.plot(days[:200], heartRates[:200], 'o-r', alpha=0.7, label="first", lw=0.5, mec='b', mew=0.5, ms=1)
     return fig_to_html(fgr)
 
@@ -156,15 +155,19 @@ def getSteps(id):
     stepData = endData
 
     days = []
-    heartRates = []
+    steps = []
     for step in list(stepData.keys()):
         endTime = stepData[step]['startTime']
         value = stepData[step]['value']
         days.append(endTime)
-        heartRates.append(value)
+        steps.append(value)
 
-    fgr = plt.figure(figsize=(12, 7))
-    print(days[:200])
-    plt.plot(days[:200], heartRates[:200], 'o-r', alpha=0.7, label="first", lw=0.5, mec='b', mew=0.5, ms=1)
-    return fig_to_html(fgr)
+    fig, ax = plt.subplots()
+    ax.bar(days, steps)
+    ax.set_facecolor('seashell')
+    fig.set_facecolor('floralwhite')
+    fig.set_figwidth(12)  # ширина Figure
+    fig.set_figheight(6)  # высота Figure
+
+    return fig_to_html(fig)
     
