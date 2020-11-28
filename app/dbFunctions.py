@@ -63,3 +63,8 @@ def checkToNull(param):
     else:
         s = " '" + param + "',"
     return s
+
+def getRoofTypes():
+    sql='SELECT id, "name" FROM public.roof_types;'
+    rows=execSQL(sql,None,False)
+    return rows
