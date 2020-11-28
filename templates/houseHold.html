@@ -15,7 +15,7 @@
             <div class="row">
                 <div>{{ form.dateCreate.label }} {{ form.dateCreate(size=20) }}</div>
             </div>
-            <div class="row">
+            <div class="jumbotron jumbotron-fluid">
                 <div>{{ form.roofType.label }}
                     <br> {% for subfield in form.roofType %}
                     <tr>
@@ -25,7 +25,7 @@
                     {% endfor %}
                 </div>
             </div>
-            <div class="row">
+            <div class="jumbotron jumbotron-fluid">
                 <div>{{ form.electricity.label }} {{ form.electricity(size=20) }}</div>
                 <div>
                     {{ form.fuelType.label }}
@@ -37,7 +37,7 @@
                     {% endfor %}
                 </div>
             </div>
-            <div class="row">
+            <div class="jumbotron jumbotron-fluid">
                 <div>
                     {{ form.heatType.label }}
                     <br> {% for subfield in form.heatType %}
@@ -48,7 +48,7 @@
                     {% endfor %}
                 </div>
             </div>
-            <div class="row">
+            <div class="jumbotron jumbotron-fluid">
                 <div>
                     {{ form.waterSource.label }}
                     <br> {% for subfield in form.waterSource %}
@@ -59,7 +59,7 @@
                     {% endfor %}
                 </div>
             </div>
-            <div class="row">
+            <div class="jumbotron jumbotron-fluid">
                 <div>
                     {{ form.waterTime.label }}
                     <br> {% for subfield in form.waterTime %}
