@@ -12,15 +12,13 @@ def hello():
 @app.route('/login', methods=['POST'])
 def login():
     param = request.get_json()
-    print(param)
     sql = '''SELECT public.users.*, public.roles.name  FROM public.users 
              left outer join public.roles on  public.users.roleid= public.roles.id 
              where users.login='%s' ''' % param['userName']
     rows = dbFunctions.execSQL(sql, None, True)
-    print(rows)
     if len(rows) > 0:
         for row in rows:
-            if row[4].strip() == param['userPass']:
+            if row[5].strip() == param['userPass']:
                 uid = dbFunctions.makeSession(row[0])
                 userInfo = {'FAM': row[1], 'IM': row[2], 'OT': row[3], 'ROLE':row[7],  'SESSION': uid}
                 return jsonify(userInfo)
