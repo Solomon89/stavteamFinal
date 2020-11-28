@@ -64,14 +64,7 @@
 {% endfor %}
     </div>
     <div>
-    {{ form.properties.label }}
-        <br>
-    {% for subfield in form.properties %}
-    <tr>
-        <td>{{ subfield }}</td>
-        <td>{{ subfield.label }}</td>
-    </tr>
-{% endfor %}
+    {{ form.properties.label }}{{ form.properties(rows=3, multiple=True) }}
     </div>
     <input type="submit" value="Go">
 </form>
