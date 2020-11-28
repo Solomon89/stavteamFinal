@@ -1,6 +1,6 @@
 from stavteam import app,client
 from flask import render_template
-from flask import Flask, redirect, request, url_for
+from flask import Flask, redirect, request, url_for, session
 from app import db
 import requests
 import json
