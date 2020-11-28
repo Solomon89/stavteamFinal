@@ -1,5 +1,6 @@
 <template>
     <div>
+        <app-header></app-header>
         <div class="pacient-block">
             Инфо о пациенте
         </div>
@@ -25,6 +26,7 @@ export default {
         let data = {
             session: sessionStorage.getItem('sessionId')
         };
+        console.log(router.prop);
     }
 }
 </script>
