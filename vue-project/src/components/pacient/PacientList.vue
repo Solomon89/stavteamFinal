@@ -148,5 +148,8 @@ export default {
 </script>
 
 <style scoped>
-
+    .pacients li {
+        display: inline-block;
+        width: 32%;
+    }
 </style>

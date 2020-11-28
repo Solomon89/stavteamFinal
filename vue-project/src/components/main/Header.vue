@@ -8,9 +8,11 @@
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Поиск по пациентам">
                     <div class="input-group-append">
-                        <a href="#">
-                            <img src="/static/img/search.png">
-                        </a>
+                        <span class="input-group-text">
+                            <a href="#">
+                                <img src="/static/img/search.png">
+                            </a>
+                        </span>
                     </div>
                 </div>
             </div>
