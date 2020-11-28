@@ -115,7 +115,7 @@ def getGraph(id):
     days =[]
     heartRates=[]
     for pulse in pulseData:
-        startTime = str(pulse['startTime'])
+        startTime = pulse['startTime']
         value = pulse['value']
         days.append(startTime)
         heartRates.append(value)
