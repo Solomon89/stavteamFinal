@@ -8,6 +8,12 @@
 <form method="POST" action="/">
     {{ form.csrf_token }}
     {{ form.dateCreate.label }} {{ form.dateCreate(size=20) }}
+    {% for subfield in form.roofType %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+{% endfor %}
     <input type="submit" value="Go">
 </form>
 </body>
