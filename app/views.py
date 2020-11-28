@@ -5,6 +5,8 @@ from app import dbFunctions
 from flask import abort
 from flask import render_template
 from app import forms
+import matplotlib.pyplot as plt
+from mpld3 import fig_to_html, plugins
 
 @app.route("/")
 @app.route("/index")
@@ -41,3 +43,9 @@ def logout():
     if dbFunctions.killSession(param['session']):
         return 'OK'
 from app import googleFit
+
+
+@app.route('/predict/<string:id>')
+def predict(id):
+    #todo function to predict by id
+    return fig_to_html(fig)
