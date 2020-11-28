@@ -17,6 +17,7 @@ def login():
              left outer join public.roles on  public.users.roleid= public.roles.id 
              where users.login='%s' ''' % param['userName']
     rows = dbFunctions.execSQL(sql, None, True)
+    print(rows)
     if len(rows) > 0:
         for row in rows:
             if row[4].strip() == param['userPass']:
