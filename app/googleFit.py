@@ -36,7 +36,6 @@ def auth():
         scope=["openid", "email", "profile",'https://www.googleapis.com/auth/fitness.heart_rate.read','https://www.googleapis.com/auth/fitness.activity.read',
                'https://www.googleapis.com/auth/fitness.sleep.read'],
     )
-    print(request_uri)
     return redirect(request_uri)
 
 def get_google_provider_cfg():
@@ -64,7 +63,6 @@ def callback():
     )
     # Parse the tokens!
     client.parse_request_body_response(json.dumps(token_response.json()))
-    print(token_response.json())
     userinfo_endpoint = google_provider_cfg["userinfo_endpoint"]
     uri, headers, body = client.add_token(userinfo_endpoint)
     userinfo_response = requests.get(uri, headers=headers, data=body)
@@ -95,7 +93,6 @@ def getHeartRate(id):
     DATA_SOURCE = "derived:com.google.heart_rate.bpm:com.google.android.gms:merge_heart_rate_bpm"
     DATA_SET = "1604250221000000000-1606583021000000000"
     user = db.GetGoogleAuth(id)
-    print(user[6])
     credentials = AccessTokenCredentials(user[6],'my-user-agent/1.0')
 
     http = httplib2.Http()
@@ -132,7 +129,6 @@ def getSteps(id):
     DATA_SOURCE = "derived:com.google.step_count.delta:com.google.android.gms:estimated_steps"
     DATA_SET = "1604250221000000000-1606583021000000000"
     user = db.GetGoogleAuth(id)
-    print(user[6])
     credentials = AccessTokenCredentials(user[6], 'my-user-agent/1.0')
 
     http = httplib2.Http()
