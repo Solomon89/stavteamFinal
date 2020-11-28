@@ -160,4 +160,17 @@ export default {
         font-size: 12px;
         padding: 2px;
     }
+    .pacient .image {
+        float: left;
+        display: inline-block;
+        border-radius: 25px;
+        padding: 10px;
+        width: 50px;
+        height: 50px;
+        background-color: #e5e5e5;
+        margin-right: 10px;
+    }
+    .pacient .text-block {
+        display: inline-block;
+    }
 </style>
