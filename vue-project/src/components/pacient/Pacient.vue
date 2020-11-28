@@ -147,7 +147,7 @@ export default {
                     status: '/static/img/heart-green.png'
                 }
             ],
-            pacientId: this.$route.params - 1
+            pacientId: ''
         }
     },
     components: {
@@ -160,6 +160,9 @@ export default {
         let data = {
             session: sessionStorage.getItem('sessionId'),
         };
+
+        this.pacientId = this.$route.params - 1;
+
         console.log(this.$route.params);
     }
 }
