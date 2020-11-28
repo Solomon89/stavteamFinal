@@ -29,6 +29,27 @@
                                 <tr><td>Ежемесячный доход:</td><td>{{ pacients[pacientId].salary }}</td></tr>
                             </tbody>
                         </table>
+                        <table>
+                            <thead>
+                                <tr><td colspan="2"><strong>Заболевания</strong></td><td></td></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Диагноз:</td><td>{{ pacients[pacientId].diagnosis }}</td></tr>
+                                <tr><td>Код по МКБ-10:</td><td>{{ pacients[pacientId].mkb }}</td></tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <thead>
+                                <tr><td colspan="2"><strong>Образ жизни</strong></td><td></td></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Курение:</td><td>{{ pacients[pacientId].smoke }}</td></tr>
+                                <tr><td>Алкоголь:</td><td>{{ pacients[pacientId].alkohol }}</td></tr>
+                                <tr><td>Сон:</td><td>{{ pacients[pacientId].sleep }}</td></tr>
+                                <tr><td>Спорт:</td><td>{{ pacients[pacientId].sport }}</td></tr>
+                                <tr><td>Питание:</td><td>{{ pacients[pacientId].eat }}</td></tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
