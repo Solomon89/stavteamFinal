@@ -1,8 +1,10 @@
 from datetime import datetime
 from apiclient.discovery import build
-from oauth2client.client import OAuth2WebServerFlow
+from oauth2client.client import OAuth2WebServerFlow, AccessTokenCredentials 
 import httplib2
 import matplotlib.pyplot as plt
+
+
 
 CLIENT_ID = '488160995737-gufpaiscivjd6l3r3ofk9p5833g9gn38.apps.googleusercontent.com'
 CLIENT_SECRET = 'ipNz9k7Qv0LIO04wPvEtsz_x'
@@ -22,13 +24,14 @@ def nanoseconds(nanotime):
     return dt.strftime('%Y-%m-%d %H:%M:%S')
 
 
-flow = OAuth2WebServerFlow(CLIENT_ID, CLIENT_SECRET, OAUTH_SCOPE, REDIRECT_URI)
-authorize_url = flow.step1_get_authorize_url()
-print('Go to the following link in your browser:')
-print(authorize_url)
-code = input('Enter verification code: ').strip()
+#flow = OAuth2WebServerFlow(CLIENT_ID, CLIENT_SECRET, OAUTH_SCOPE, REDIRECT_URI)
+#authorize_url = flow.step1_get_authorize_url()
+#print('Go to the following link in your browser:')
+#print(authorize_url)
+#code = input('Enter verification code: ').strip()
 #code='4/1AY0e-g41BqSTTB0lfWC4nN84hwvsjJO0t2StM4oiduowXCyNTRD_eVfIY2k'
-credentials = flow.step2_exchange(code)
+#credentials = flow.step2_exchange(code)
+credentials = AccessTokenCredentials('ya29.a0AfH6SMBpA9KNzKCv4QWXZA1nWINImf2DFaEpGT_nUgHbCjK4TPWkj-DDhXZjYpkpzoD_XEp6wXApEEBV_Yq7LVqrNqkyyVCDE6kyrmVArtM1iKLt_dz30pLbTzIjYf8qoSwH0uiUnLnKtwOpADnfl78hFAQWRbmk6lJpkPE2epM','my-user-agent/1.0')
 
 http = httplib2.Http()
 http = credentials.authorize(http)

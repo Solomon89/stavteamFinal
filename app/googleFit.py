@@ -72,3 +72,8 @@ def myauth(uniq_id):
     for items in user:
         _return += str(items)
     return _return
+
+
+@app.route('/mydayactivity/<string:uniq_id>')
+def mydayactivity(dataSourceId,datasetId):
+    
