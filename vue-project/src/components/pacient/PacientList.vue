@@ -4,15 +4,17 @@
             <ul>
                 <li v-for="pacient in pacients">
                     <div class="pacient">
-                        <div class="image"></div>
+                        <div class="image">
+                            <img src="/static/img/pacient-no-img.png>
+                        </div>
                         <div class="text-block">
                             <div class="info">
                                 <span>{{ pacient.name }}</span>
                                 <span></span>
                             </div>
                             <div class="control">
-                                <input type="button" value="Написать">
-                                <input type="button" value="Отправть напоминание">
+                                <input type="button" class="btn btn-secondary btn-lg" value="Написать">
+                                <input type="button" class="btn btn-secondary btn-lg" value="Отправть напоминание">
                             </div>
                         </div>
                     </div>
@@ -151,5 +153,11 @@ export default {
     .pacients li {
         display: inline-block;
         width: 32%;
+        padding: 7px;
+        font-size: 14px;
+    }
+    .pacient input {
+        font-size: 12px;
+        padding: 2px;
     }
 </style>
