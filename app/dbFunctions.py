@@ -22,7 +22,7 @@ def checkSession(uid):
 
 def makeSession(userId):
     uid = str(uuid.uuid4())
-    sql = '''INSERT INTO public.sessions(session, "userID", "loginTime")
+    sql = '''INSERT INTO public.sessions(session, userid, logintime)
      VALUES
            (\'''' + uid + '''\',
             ''' + str(userId) + ''',NOW()::timestamp)'''
