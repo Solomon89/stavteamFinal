@@ -58,7 +58,7 @@ def predict(id):
 
     ax.set_facecolor('seashell')
     fig.set_facecolor('floralwhite')
-    fig.set_figwidth(12)    #  ширина Figure
-    fig.set_figheight(6)    #  высота Figure
+    fig.set_figwidth(3)    #  ширина Figure
+    fig.set_figheight(2)    #  высота Figure
     #todo function to predict by id
     return fig_to_html(fig)
