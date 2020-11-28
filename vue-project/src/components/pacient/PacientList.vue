@@ -176,6 +176,9 @@ export default {
         position: absolute;
         top: 0;
     }
+    .pacient .image span img {
+        widows: 20px;
+    }
     .pacient .text-block {
         display: inline-block;
     }
