@@ -17,7 +17,7 @@ class HouseHold(FlaskForm):
                              choices=dbFunctions.getWaterSources())
     waterTime = RadioField('Если в доме нет системы водоснабжения, сколько времени требуется для доставки воды (включая время, затрачиваемое на то, чтобы добраться до источника, набрать воды и вернуться обратно)',
                            choices=dbFunctions.getWaterTime())
-    properties =
+    #properties =
     # email = StringField("Email: ", validators=[Email()])
     # message = TextAreaField("Message", validators=[DataRequired()])
     submit = SubmitField("Submit")
