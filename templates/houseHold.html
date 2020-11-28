@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
 
 <head>
     <meta charset="UTF-8">
@@ -36,50 +37,54 @@
                         {% endfor %}
                     </div>
             </div>
+            <div>{{ form.electricity.label }} {{ form.electricity(size=20) }}</div>
             <div class="row">
-                <div>{{ form.electricity.label }} {{ form.electricity(size=20) }}</div>
-                <div>
                     {{ form.fuelType.label }}
-                    <br> {% for subfield in form.fuelType %}
-                    <tr>
-                        <td>{{ subfield }}</td>
-                        <td>{{ subfield.label }}</td>
-                    </tr>
-                    {% endfor %}
-                </div>
+                    <br>
+                    <div class="cite">
+                        {% for subfield in form.fuelType %}
+                        <div class="col">
+                            {{ subfield }}
+                            {{ subfield.label }}
+                        </div>
+                        {% endfor %}
+                    </div>
             </div>
             <div class="row">
-                <div>
                     {{ form.heatType.label }}
-                    <br> {% for subfield in form.heatType %}
-                    <tr>
-                        <td>{{ subfield }}</td>
-                        <td>{{ subfield.label }}</td>
-                    </tr>
-                    {% endfor %}
-                </div>
+                    <br>
+                    <div class="cite">
+                        {% for subfield in form.heatType %}
+                        <div class="col">
+                            {{ subfield }}
+                            {{ subfield.label }}
+                        </div>
+                        {% endfor %}
+                    </div>
             </div>
             <div class="row">
-                <div>
                     {{ form.waterSource.label }}
-                    <br> {% for subfield in form.waterSource %}
-                    <tr>
-                        <td>{{ subfield }}</td>
-                        <td>{{ subfield.label }}</td>
-                    </tr>
-                    {% endfor %}
-                </div>
+                    <br>
+                    <div class="cite">
+                        {% for subfield in form.waterSource %}
+                        <div class="col">
+                            {{ subfield }}
+                            {{ subfield.label }}
+                        </div>
+                        {% endfor %}
+                    </div>
             </div>
             <div class="row">
-                <div>
                     {{ form.waterTime.label }}
-                    <br> {% for subfield in form.waterTime %}
-                    <tr>
-                        <td>{{ subfield }}</td>
-                        <td>{{ subfield.label }}</td>
-                    </tr>
-                    {% endfor %}
-                </div>
+                    <br>
+                    <div class="cite">
+                        {% for subfield in form.waterTime %}
+                        <div class="col">
+                            {{ subfield }}
+                            {{ subfield.label }}
+                        </div>
+                        {% endfor %}
+                    </div>
             </div>
             <div>{{ form.properties.label }}{{ form.properties}}</div>
             <div>{{ form.incoming.label }} {{ form.incoming(size=20) }}</div>
@@ -93,85 +98,109 @@
                 </tr>
                 {% endfor %}
             </div>
-            <div>
-                {{ form.coocking.label }}
-                <br> {% for subfield in form.coocking %}
-                <tr>
-                    <td>{{ subfield }}</td>
-                    <td>{{ subfield.label }}</td>
-                </tr>
-                {% endfor %}
+            <div class="row">
+                    {{ form.coocking.label }}
+                    <br>
+                    <div class="cite">
+                        {% for subfield in form.coocking %}
+                        <div class="col">
+                            {{ subfield }}
+                            {{ subfield.label }}
+                        </div>
+                        {% endfor %}
+                    </div>
             </div>
             <div>{{ form.ventil.label }}{{ form.ventil}}</div>
             <div>{{ form.coockingOutside.label }}{{ form.coockingOutside}}</div>
             <h2>Послушайте следующие утверждения и отметьте наиболее подходящий вариант</h2>
             <h3>Как часто возникает то, что вам и членам вашей семьи не хватает еды?</h3>
-            <div>
-                {{ form.notEnoughFoodNow.label }}
-                <br> {% for subfield in form.notEnoughFoodNow %}
-                <tr>
-                    <td>{{ subfield }}</td>
-                    <td>{{ subfield.label }}</td>
-                </tr>
-                {% endfor %}
+            <div class="row">
+                    {{ form.notEnoughFoodNow.label }}
+                    <br>
+                    <div class="cite">
+                        {% for subfield in form.notEnoughFoodNow %}
+                        <div class="col">
+                            {{ subfield }}
+                            {{ subfield.label }}
+                        </div>
+                        {% endfor %}
+                    </div>
             </div>
-            <div>
-                {{ form.notEnoughFoodYear.label }}
-                <br> {% for subfield in form.notEnoughFoodYear %}
-                <tr>
-                    <td>{{ subfield }}</td>
-                    <td>{{ subfield.label }}</td>
-                </tr>
-                {% endfor %}
+            <div class="row">
+                    {{ form.notEnoughFoodYear.label }}
+                    <br>
+                    <div class="cite">
+                        {% for subfield in form.notEnoughFoodYear %}
+                        <div class="col">
+                            {{ subfield }}
+                            {{ subfield.label }}
+                        </div>
+                        {% endfor %}
+                    </div>
             </div>
             <h3>Как часто возникало то, что вам и членам вашей семьи не хватало средств на покупку одежды? </h3>
-            <div>
-                {{ form.notEnoughClothesNow.label }}
-                <br> {% for subfield in form.notEnoughClothesNow %}
-                <tr>
-                    <td>{{ subfield }}</td>
-                    <td>{{ subfield.label }}</td>
-                </tr>
-                {% endfor %}
+            <div class="row">
+                    {{ form.notEnoughClothesNow.label }}
+                    <br>
+                    <div class="cite">
+                        {% for subfield in form.notEnoughClothesNow %}
+                        <div class="col">
+                            {{ subfield }}
+                            {{ subfield.label }}
+                        </div>
+                        {% endfor %}
+                    </div>
             </div>
-            <div>
-                {{ form.notEnoughClothesYear.label }}
-                <br> {% for subfield in form.notEnoughClothesYear %}
-                <tr>
-                    <td>{{ subfield }}</td>
-                    <td>{{ subfield.label }}</td>
-                </tr>
-                {% endfor %}
+            <div class="row">
+                    {{ form.notEnoughClothesYear.label }}
+                    <br>
+                    <div class="cite">
+                        {% for subfield in form.notEnoughClothesYear %}
+                        <div class="col">
+                            {{ subfield }}
+                            {{ subfield.label }}
+                        </div>
+                        {% endfor %}
+                    </div>
             </div>
             <h3>У вас имеются трудности с оплатой счетов? (за жил. площадь, электричество, теплоснабжение и др.)? </h3>
-            <div>
-                {{ form.notEnoughPayNow.label }}
-                <br> {% for subfield in form.notEnoughPayNow %}
-                <tr>
-                    <td>{{ subfield }}</td>
-                    <td>{{ subfield.label }}</td>
-                </tr>
-                {% endfor %}
+            <div class="row">
+                    {{ form.notEnoughPayNow.label }}
+                    <br>
+                    <div class="cite">
+                        {% for subfield in form.notEnoughPayNow %}
+                        <div class="col">
+                            {{ subfield }}
+                            {{ subfield.label }}
+                        </div>
+                        {% endfor %}
+                    </div>
             </div>
-            <div>
-                {{ form.notEnoughPayYear.label }}
-                <br> {% for subfield in form.notEnoughPayYear %}
-                <tr>
-                    <td>{{ subfield }}</td>
-                    <td>{{ subfield.label }}</td>
-                </tr>
-                {% endfor %}
+            <div class="row">
+                    {{ form.notEnoughPayYear.label }}
+                    <br>
+                    <div class="cite">
+                        {% for subfield in form.notEnoughPayYear %}
+                        <div class="col">
+                            {{ subfield }}
+                            {{ subfield.label }}
+                        </div>
+                        {% endfor %}
+                    </div>
             </div>
             <h3>Чем (из следующего) владеет ваше домашнее хозяйство?</h3>
             <div>{{ form.assets.label }}{{ form.assets}}</div>
-            <div>
-                {{ form.incomingPartForFood.label }}
-                <br> {% for subfield in form.incomingPartForFood %}
-                <tr>
-                    <td>{{ subfield }}</td>
-                    <td>{{ subfield.label }}</td>
-                </tr>
-                {% endfor %}
+            <div class="row">
+                    {{ form.incomingPartForFood.label }}
+                    <br>
+                    <div class="cite">
+                        {% for subfield in form.incomingPartForFood %}
+                        <div class="col">
+                            {{ subfield }}
+                            {{ subfield.label }}
+                        </div>
+                        {% endfor %}
+                    </div>
             </div>
             <h3>Выберите высказывание, которое наиболее точно описывает финансовые возможности Вашей семьи</h3>
             <div>{{ form.notEnoughForNecessary.label }}{{ form.notEnoughForNecessary}}</div>
@@ -179,23 +208,29 @@
             <div>{{ form.expensiveSometimes.label }}{{ form.expensiveSometimes}}</div>
             <div>{{ form.expensiveNotVeryExpensive.label }}{{ form.expensiveNotVeryExpensive}}</div>
             <div>{{ form.veryExpensive.label }}{{ form.veryExpensive}}</div>
-            <div>
-                {{ form.incomeLevel.label }}
-                <br> {% for subfield in form.incomeLevel %}
-                <tr>
-                    <td>{{ subfield }}</td>
-                    <td>{{ subfield.label }}</td>
-                </tr>
-                {% endfor %}
+            <div class="row">
+                    {{ form.incomeLevel.label }}
+                    <br>
+                    <div class="cite">
+                        {% for subfield in form.incomeLevel %}
+                        <div class="col">
+                            {{ subfield }}
+                            {{ subfield.label }}
+                        </div>
+                        {% endfor %}
+                    </div>
             </div>
-            <div>
-                {{ form.typeHousing.label }}
-                <br> {% for subfield in form.typeHousing %}
-                <tr>
-                    <td>{{ subfield }}</td>
-                    <td>{{ subfield.label }}</td>
-                </tr>
-                {% endfor %}
+            <div class="row">
+                    {{ form.typeHousing.label }}
+                    <br>
+                    <div class="cite">
+                        {% for subfield in form.typeHousing %}
+                        <div class="col">
+                            {{ subfield }}
+                            {{ subfield.label }}
+                        </div>
+                        {% endfor %}
+                    </div>
             </div>
             <div>{{ form.livingRooms.label }}{{ form.livingRooms}}</div>
             <div>{{ form.livingSquare.label }}{{ form.livingSquare}}</div>
