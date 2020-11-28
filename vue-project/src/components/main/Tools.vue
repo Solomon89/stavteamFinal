@@ -30,6 +30,10 @@ export default {
         background-color: #E5E5E5;
         margin-bottom: 15px;
     }
+    .sort {
+        padding: 5px;
+        margin-left: 50px;
+    }
     .sort li {
         display: inline-block;
         font-size: 12px;
@@ -37,6 +41,7 @@ export default {
         background-repeat: no-repeat;
         background-repeat: no-repeat;
         background-size: 16px;
+        margin-right: 10px;
     }
     #name-sort {
         background-image: url(/static/img/sort-alpha-down.png);

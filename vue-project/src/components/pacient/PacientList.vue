@@ -3,22 +3,24 @@
         <div class="pacients">
             <ul>
                 <li v-for="pacient in pacients">
-                    <div class="pacient">
-                        <div class="image">
-                            <img src="/static/img/pacient-no-img.png">
-                            <span><img v-bind:src="pacient.status"></span>
-                        </div>
-                        <div class="text-block">
-                            <div class="info">
-                                <span>{{ pacient.name }}</span>
-                                <span></span>
+                    <a href="#">
+                        <div class="pacient">
+                            <div class="image">
+                                <img src="/static/img/pacient-no-img.png">
+                                <span><img v-bind:src="pacient.status"></span>
                             </div>
-                            <div class="control">
-                                <input type="button" class="btn btn-secondary btn-lg" value="Написать">
-                                <input type="button" class="btn btn-secondary btn-lg" value="Отправть напоминание">
+                            <div class="text-block">
+                                <div class="info">
+                                    <span>{{ pacient.name }}</span>
+                                    <span></span>
+                                </div>
+                                <div class="control">
+                                    <input type="button" class="btn btn-secondary btn-lg" value="Написать">
+                                    <input type="button" class="btn btn-secondary btn-lg" value="Отправть напоминание">
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </li>
             </ul>
         </div>
