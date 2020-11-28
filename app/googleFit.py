@@ -166,7 +166,7 @@ def getSteps(id):
     ax.bar(days, steps)
     ax.set_facecolor('seashell')
     fig.set_facecolor('floralwhite')
-    fig.set_figwidth(12)  # ширина Figure
+    fig.set_figwidth(5)  # ширина Figure
     fig.set_figheight(6)  # высота Figure
 
     return fig_to_html(fig)
