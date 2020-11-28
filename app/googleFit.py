@@ -10,7 +10,7 @@ from app.models import GoogleUser
 def auth2(userId):
     user = db.GetGoogleAuth(userId)
     if(user == None):
-        user = auth(id)
+        return auth(id)
 
     return str(user)
 
