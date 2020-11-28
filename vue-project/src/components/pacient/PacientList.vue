@@ -6,7 +6,7 @@
                     <div class="pacient">
                         <div class="image">
                             <img src="/static/img/pacient-no-img.png">
-                            <span><img src="/static/img/heart-green.png"></span>
+                            <span><img v-bind:src="pacient.status"></span>
                         </div>
                         <div class="text-block">
                             <div class="info">
@@ -34,112 +34,112 @@ export default {
                 {
                     photo: '',
                     name: 'Крестовоздвиженский Николай Константинович',
-                    status: 'alert'
+                    status: '/static/img/heart-red.png'
                 },
                 {
                     photo: '',
                     name: 'Николаенко Александр Александрович',
-                    status: 'ok'
+                    status: '/static/img/heart-green.png'
                 },
                 {
                     photo: '',
                     name: 'Коновалова Любава Витальевна',
-                    status: 'alert'
+                    status: '/static/img/heart-red.png'
                 },
                 {
                     photo: '',
                     name: 'Волков Руслан Антонинович',
-                    status: 'alert'
+                    status: '/static/img/heart-red.png'
                 },
                 {
                     photo: '',
                     name: 'Ермакова Владислава Владленовна',
-                    status: 'ok'
+                    status: '/static/img/heart-green.png'
                 },
                 {
                     photo: '',
                     name: 'Ефимова Ландыш Валерьевна',
-                    status: 'ok'
+                    status: '/static/img/heart-green.png'
                 },
                 {
                     photo: '',
                     name: 'Степанов Илларион Ярославович',
-                    status: 'ok'
+                    status: '/static/img/heart-green.png'
                 },
                 {
                     photo: '',
                     name: 'Тихонова Калерия Рудольфовна',
-                    status: 'ok'
+                    status: '/static/img/heart-green.png'
                 },
                 {
                     photo: '',
                     name: 'Максимов Оскар Евсеевич',
-                    status: 'alert'
+                    status: '/static/img/heart-red.png'
                 },
                 {
                     photo: '',
                     name: 'Веселова Виргиния Степановна',
-                    status: 'ok'
+                    status: '/static/img/heart-green.png'
                 },
                 {
                     photo: '',
                     name: 'Овчинникова Ландыш Ивановна',
-                    status: 'ok'
+                    status: '/static/img/heart-green.png'
                 },
                 {
                     photo: '',
                     name: 'Козлов Осип Андреевич',
-                    status: 'ok'
+                    status: '/static/img/heart-green.png'
                 },
                 {
                     photo: '',
                     name: 'Дьячкова Глория Игоревна',
-                    status: 'alert'
+                    status: '/static/img/heart-red.png'
                 },
                 {
                     photo: '',
                     name: 'Зайцева Ева Мэлоровна',
-                    status: 'ok'
+                    status: '/static/img/heart-green.png'
                 },
                 {
                     photo: '',
                     name: 'Беспалов Леонтий Мэлорович',
-                    status: 'ok'
+                    status: '/static/img/heart-green.png'
                 },
                 {
                     photo: '',
                     name: 'Сафонов Вольдемар Кириллович',
-                    status: 'ok'
+                    status: '/static/img/heart-green.png'
                 },
                 {
                     photo: '',
                     name: 'Ершов Пантелей Парфеньевич',
-                    status: 'ok'
+                    status: '/static/img/heart-green.png'
                 },
                 {
                     photo: '',
                     name: 'Тетерин Ян Игнатьевич',
-                    status: 'alert'
+                    status: '/static/img/heart-red.png'
                 },
                 {
                     photo: '',
                     name: 'Романова Ярослава Рубеновна',
-                    status: 'ok'
+                    status: '/static/img/heart-green.png'
                 },
                 {
                     photo: '',
                     name: 'Назаров Овидий Николаевич',
-                    status: 'ok'
+                    status: '/static/img/heart-green.png'
                 },
                 {
                     photo: '',
                     name: 'Кондратьева Евгения Агафоновна',
-                    status: 'ok'
+                    status: '/static/img/heart-red.png'
                 },
                 {
                     photo: '',
                     name: 'Лукин Иосиф Платонович',
-                    status: 'ok'
+                    status: '/static/img/heart-green.png'
                 }
             ]
         }
@@ -170,6 +170,14 @@ export default {
         height: 50px;
         background-color: #e5e5e5;
         margin-right: 10px;
+        position: relative;
+    }
+    .pacient .image span {
+        position: absolute;
+        top: 0;
+    }
+    .pacient .image span img {
+        width: 20px;
     }
     .pacient .text-block {
         display: inline-block;
