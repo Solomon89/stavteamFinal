@@ -163,11 +163,11 @@ def getSteps(id):
         steps.append(value)
 
     fig, ax = plt.subplots()
-    ax.bar(days, steps)
+    ax.bar(days, steps,width=1)
     ax.set_facecolor('seashell')
     fig.set_facecolor('floralwhite')
-    fig.set_figwidth(5)  # ширина Figure
+    fig.set_figwidth(12)  # ширина Figure
     fig.set_figheight(6)  # высота Figure
-
+    ax.
     return fig_to_html(fig)
     
