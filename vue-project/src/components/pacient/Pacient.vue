@@ -1,6 +1,9 @@
 <template>
     <div>
         <app-header></app-header>
+        <div class="menu">
+            <a href="/">Вернуться к списку пациентов</a>
+        </div>
         <div class="pacient-block">
             <div class="left-block">
                 <div class="pacient">
@@ -413,5 +416,14 @@ export default {
 }
 .pacient .text-block {
     display: inline-block;
+}
+.menu {
+    height: 40px;
+    background-color: #E5E5E5;
+    margin-bottom: 15px;
+}
+.menu a {
+    padding-left: 27px;
+    background: url(/static/img/arrow-left.png) no-repeat;
 }
 </style>
