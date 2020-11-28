@@ -3,7 +3,7 @@
         <div class="pacients">
             <ul>
                 <li v-for="pacient in pacients">
-                    <a v-bind:href="'/pacient/' + pacient.id" target="_blank">
+                    <a v-bind:href="'/#/pacient/' + pacient.id" target="_blank">
                         <div class="pacient">
                             <div class="image">
                                 <img src="/static/img/pacient-no-img.png">
