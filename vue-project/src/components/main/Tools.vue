@@ -24,5 +24,6 @@ export default {
     .tools {
         height: 40px;
         background-color: #E5E5E5;
+        margin-bottom: 15px;
     }
 </style>

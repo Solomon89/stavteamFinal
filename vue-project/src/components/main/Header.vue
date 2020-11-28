@@ -48,7 +48,7 @@ export default {
     .header-container {
         padding: 0 20px;
         height: 60px;
-        background-color: #828282;
+        background-color: #2F80ED;
         color: #ffffff;
     }
     .header-logo {

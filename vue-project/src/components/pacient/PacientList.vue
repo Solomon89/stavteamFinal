@@ -6,6 +6,7 @@
                     <div class="pacient">
                         <div class="image">
                             <img src="/static/img/pacient-no-img.png">
+                            <span><img src="/static/img/heart-green.png"></span>
                         </div>
                         <div class="text-block">
                             <div class="info">
