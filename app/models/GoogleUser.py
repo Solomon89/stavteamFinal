@@ -9,8 +9,8 @@ class GoogleUser:
         self.users_name = users_name
         pass
     def inLineToSave(self):
-        returnStr =  self.users_name + ","
-        returnStr +=  self.users_email + ","
-        returnStr +=  self.picture + ","
-        returnStr +=  self.unique_id
+        returnStr =  "'"+self.users_name + "',"
+        returnStr +=  "'"+self.users_email + "',"
+        returnStr +=  "'"+self.picture + "',"
+        returnStr +=  "'"+self.unique_id+ "'"
         return returnStr
