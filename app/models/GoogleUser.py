@@ -16,7 +16,7 @@ class GoogleUser:
         returnStr +=  "'"+self.picture + "',"
         returnStr +=  "'"+self.unique_id+ "',"
         returnStr +=  "'"+self.access_token + "',"
-        returnStr +=  "'"+self.userid + "'"
+        returnStr +=  ""+self.userid + ""
         return returnStr
     def load(self,array):
         self.unique_id = array[0]

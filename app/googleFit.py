@@ -36,7 +36,7 @@ def get_google_provider_cfg():
 
 @app.route('/auth/callback')
 def callback():
-    id = 1#session.get('id')
+    id = session.get('id')
     redirect("https://www.googleapis.com/auth/fitness.activity.read")
     # Get authorization code Google sent back to you
     code = request.args.get("code")
@@ -66,7 +66,7 @@ def callback():
         picture = userinfo_response.json()["picture"]
         users_name = userinfo_response.json()["given_name"]
         access_token = token_response.json()["access_token"]
-        User = GoogleUser.GoogleUser(unique_id,users_email,picture,users_name,id,access_token)
+        User = GoogleUser.GoogleUser(unique_id,users_email,picture,users_name,int(id),access_token)
         db.SaveAuth(User)
     else:
         return "User email not available or not verified by Google.", 400
