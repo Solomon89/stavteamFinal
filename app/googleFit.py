@@ -104,7 +104,7 @@ def getGraph(id):
     #########################         Пульс
     data = fitness_service.users().dataSources().datasets().get(userId='me', dataSourceId=DATA_SOURCE,
                                                                 datasetId=DATA_SET).execute()
-
+   
     endData = {}
     i = 0
     for hr in data['point']:
@@ -112,16 +112,10 @@ def getGraph(id):
         endData[str(i)] = {'startTime': dt, 'value': hr['value'][0]['fpVal']}
         i += 1
     pulseData = endData
-    ########################          Шаги
-    data = fitness_service.users().dataSources().datasets().get(userId='me',
-                                                                dataSourceId='derived:com.google.step_count.delta:com.google.android.gms:estimated_steps',
-                                                                datasetId=DATA_SET).execute()
-    for hr in data['point']:
-        dt = datetime.fromtimestamp(int(hr['startTimeNanos']) // 1000000000)
-        endData[str(dt)]=hr['value'][0]['fpVal']
 
     days=list(endData.keys())
     heartRates=list(endData.values())
     plt.figure(figsize=(12, 7))
+    print(days[:200])
     plt.plot(days[:200], heartRates[:200], 'o-r', alpha=0.7, label="first", lw=0.5, mec='b', mew=0.5, ms=1)
     return fig_to_html(fgr)
