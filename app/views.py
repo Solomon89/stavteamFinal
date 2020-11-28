@@ -3,11 +3,19 @@ from flask import render_template
 from flask import jsonify, request
 from app import dbFunctions
 from flask import abort
+from flask import render_template
+from app import forms
 
 @app.route("/")
 @app.route("/index")
 def hello():
     return render_template("index.html", user="Stavteam")
+
+@app.route('/houseHold', methods=['POST','GET'])
+def houseHold():
+    if request.method == 'GET':
+        render_template('/templates/houseHold.html', form=forms.HouseHold())
+
 
 @app.route('/login', methods=['POST'])
 def login():
