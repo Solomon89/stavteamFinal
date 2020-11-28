@@ -10,15 +10,16 @@ from app.models import GoogleUser
 def auth2(userId):
     user = db.GetGoogleAuth(userId)
     if(user == None):
-        return auth(id)
+        session['id'] = str(id)
+        return redirect(url_for("auth"))
 
     return str(user)
-
-def auth(id):
+@app.route('/auth')
+def auth():
     # Find out what URL to hit for Google login
     google_provider_cfg = get_google_provider_cfg()
     authorization_endpoint = google_provider_cfg["authorization_endpoint"]
-    session['id'] = str(id)
+    
     # Use library to construct the request for Google login and provide
     # scopes that let you retrieve user's profile from Google
     request_uri = client.prepare_request_uri(
