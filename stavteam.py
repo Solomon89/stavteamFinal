@@ -4,6 +4,7 @@ import os
 
 from oauthlib.oauth2 import WebApplicationClient
 import requests
+from flask_bootstrap import Bootstrap
 
 # Configuration
 
@@ -12,7 +13,7 @@ os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 
 
 app = Flask(__name__)
-
+Bootstrap(app)
 app.secret_key = "4vxLyDnY7ylkd1F6Q8-5JvaD"
 
 
