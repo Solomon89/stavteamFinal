@@ -10,12 +10,12 @@ PWD = '111111'
 
 
 def GetAuth():
-    sql = 'SELECT * FROM authgoogle LIMIT 10'
+    sql = 'SELECT * FROM usergoogle LIMIT 10'
     value = execSQL(sql, True, False)
     return value
 
 def SaveAuth(GoogleUser):
-    sql = "insert into authgoogle(name,email,profile_pic,unique_id) values (" +GoogleUser.inLineToSave() + ")"
+    sql = "insert into usergoogle (name,email,profile_pic,unique_id) values (" +GoogleUser.inLineToSave() + ")"
     execSQL(sql, True, False)
 
 
