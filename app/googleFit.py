@@ -6,9 +6,17 @@ import requests
 import json
 from app.models import GoogleUser
 
+@app.route('/auth/<int:userId>')
+def auth2(userId):
+    user = db.GetGoogleAuth(userId)
+    if(user == None):
+        user = auth(id)
+
+    return str(user)
 
 @app.route('/auth')
-def auth():
+def auth(id):
+    db.GetGoogleAuth(userId)
     # Find out what URL to hit for Google login
     google_provider_cfg = get_google_provider_cfg()
     authorization_endpoint = google_provider_cfg["authorization_endpoint"]
@@ -74,6 +82,3 @@ def myauth(uniq_id):
     return _return
 
 
-@app.route('/mydayactivity/<string:uniq_id>')
-def mydayactivity(dataSourceId,datasetId):
-    
