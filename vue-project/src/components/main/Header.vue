@@ -67,4 +67,9 @@ export default {
     .header-user-name {
         padding-right: 15px;
     }
+    .search {
+        display: inline-block;
+        background: #C4C4C4;
+        margin: 15px;
+    }
 </style>
