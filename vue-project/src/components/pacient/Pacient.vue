@@ -8,7 +8,11 @@
 </template>
 
 <script>
+//import Vue from 'vue'
+//import Router from 'vue-router'
 import AppHeader from '../main/Header.vue';
+
+//Vue.use(Router);
 
 export default {
     data() {
@@ -26,7 +30,7 @@ export default {
         let data = {
             session: sessionStorage.getItem('sessionId')
         };
-        console.log(route.params);
+        console.log(this.$route.params);
     }
 }
 </script>
