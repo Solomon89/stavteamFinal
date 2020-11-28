@@ -1,6 +1,5 @@
 import psycopg2
 import uuid
-from app import graph
 
 deleteInterval = 3600
 SERVER = '176.118.165.45'

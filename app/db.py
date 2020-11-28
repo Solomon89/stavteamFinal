@@ -9,12 +9,16 @@ UID = 'stavteamdb'
 PWD = '111111'
 
 
-def GetAuth():
-    sql = 'SELECT * FROM usergoogle LIMIT 10'
-    value = execSQL(sql, True, False)
-    return value
+def GetAuth(unique_id):
+    _return = ""
+    sql = 'SELECT * FROM usergoogle where unique_id = "' +unique_id+ "'"
+    value = execSQL(sql, True, True)
+    for user in value:
+        _return += str(user)
+    return _return
 
 def SaveAuth(GoogleUser):
+
     sql = "insert into usergoogle (name,email,profile_pic,unique_id) values (" +GoogleUser.inLineToSave() + ")"
     execSQL(sql, True, False)
 
