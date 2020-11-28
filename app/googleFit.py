@@ -93,7 +93,7 @@ def myauth(uniq_id):
 @app.route('/myheartrate/<string:id>')
 def getHeartRate(id):
     DATA_SOURCE = "derived:com.google.heart_rate.bpm:com.google.android.gms:merge_heart_rate_bpm"
-    DATA_SET = "1551700038292387000-1751700038292387000"
+    DATA_SET = "1604250221000000000-1606583021000000000"
     user = db.GetGoogleAuth(id)
     print(user[6])
     credentials = AccessTokenCredentials(user[6],'my-user-agent/1.0')
@@ -130,7 +130,7 @@ def getHeartRate(id):
 @app.route('/mysteps/<string:id>')
 def getSteps(id):
     DATA_SOURCE = "derived:com.google.step_count.delta:com.google.android.gms:estimated_steps"
-    DATA_SET = "1551700038292387000-1751700038292387000"
+    DATA_SET = "1604250221000000000-1606583021000000000"
     user = db.GetGoogleAuth(id)
     print(user[6])
     credentials = AccessTokenCredentials(user[6], 'my-user-agent/1.0')

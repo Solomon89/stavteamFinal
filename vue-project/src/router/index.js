@@ -31,8 +31,7 @@ let router = new Router({
       name: 'Pacient',
       component: Pacient,
       meta: {
-        requiresAuth: true,
-        props: true
+        requiresAuth: true
       }
     }
   ]
