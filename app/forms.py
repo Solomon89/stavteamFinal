@@ -1,9 +1,12 @@
 from flask_wtf import FlaskForm, Form
-from wtforms import StringField, SubmitField, TextAreaField, DateField, SelectField, RadioField, \
+from wtforms import widgets, StringField, SubmitField, TextAreaField, DateField, SelectField, RadioField, \
     BooleanField, SelectMultipleField
 from wtforms.validators import DataRequired, Email
 from app import dbFunctions
 
+class MultiCheckboxField(SelectMultipleField):
+    widget = widgets.ListWidget(prefix_label=False)
+    option_widget = widgets.CheckboxInput()
 
 class HouseHold(FlaskForm):
     dateCreate = DateField("Дата заполнения: ", validators=[DataRequired()], format='%Y-%m-%d')
@@ -17,7 +20,8 @@ class HouseHold(FlaskForm):
                              choices=dbFunctions.getWaterSources())
     waterTime = RadioField('Если в доме нет системы водоснабжения, сколько времени требуется для доставки воды (включая время, затрачиваемое на то, чтобы добраться до источника, набрать воды и вернуться обратно)',
                            choices=dbFunctions.getWaterTime())
-    #properties =
+    properties = MultiCheckboxField('Наличие собственности следующих типов (отметить все соответствующие окошки)',
+                                    choices=dbFunctions.getProperties())
     # email = StringField("Email: ", validators=[Email()])
     # message = TextAreaField("Message", validators=[DataRequired()])
     submit = SubmitField("Submit")
