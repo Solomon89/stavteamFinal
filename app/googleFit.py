@@ -17,11 +17,10 @@ from mpld3 import fig_to_html, plugins
 @app.route('/auth/<int:userId>')
 def auth2(userId):
     user = db.GetGoogleAuth(userId)
-    if(user == None):
-        session['id'] = str(userId)
-        return redirect(url_for("auth"))
-
-    return str(user)
+    session['id'] = str(userId)
+    if(user != None):
+        db.deleteUser(userId)
+    return redirect(url_for("auth"))
 @app.route('/auth')
 def auth():
     # Find out what URL to hit for Google login
@@ -78,7 +77,8 @@ def callback():
         return "User email not available or not verified by Google.", 400
 
     
-    return '<p>'+User.users_email+'</p><img src="'+User.picture+'" alt="альтернативный текст">'
+    #return '<p>'+User.users_email+'</p><img src="'+User.picture+'" alt="альтернативный текст">'
+    return redirect(url_for("hello"))
 
 @app.route('/myauth/<string:uniq_id>')
 def myauth(uniq_id):

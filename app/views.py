@@ -7,6 +7,8 @@ from flask import render_template
 from app import forms
 import matplotlib.pyplot as plt
 from mpld3 import fig_to_html, plugins
+import numpy as np
+
 
 @app.route("/")
 @app.route("/index")
@@ -80,5 +82,17 @@ def predict(id):
 
     # Fill area
     ax.fill(angles, predictions, 'b', alpha=0.1)
-    plt.show()
+    #plt.show()
+    #return fig_to_html(fig)
+    x = np.arange(1, 8)
+    y = np.random.randint(1, 20, size = 7)
+
+    fig, ax = plt.subplots()
+
+    ax.bar(x, y)
+
+    ax.set_facecolor('seashell')
+    fig.set_facecolor('floralwhite')
+    fig.set_figwidth(3)    #  ширина Figure
+    fig.set_figheight(2)    #  высота Figure
     return fig_to_html(fig)
