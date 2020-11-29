@@ -8,6 +8,7 @@ from app import forms
 import matplotlib.pyplot as plt
 from mpld3 import fig_to_html, plugins
 import numpy as np
+import math
 
 
 @app.route("/")
