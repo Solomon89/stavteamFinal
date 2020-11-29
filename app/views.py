@@ -60,7 +60,7 @@ def predict(id):
                   'Прочие заболевания сердца']
 
     N = len(categories)
-    predictions = prediction_list.get(id, default = [0,0,0,0,0])
+    predictions = prediction_list[id]
     angles = [n / float(N) * 2 * pi for n in range(N)]
     angles += angles[:1]
 
