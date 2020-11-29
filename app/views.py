@@ -69,8 +69,8 @@ def predict(id):
     angles = [n / float(N) * 2 * math.pi for n in range(N)]
     angles += angles[:1]
 
-    fig, ax = plt.subplot(111, polar=True)
-
+    fig = plt.figure()
+    ax = fig.add_subplot(111, polar=True)
     # Draw one axe per variable + add labels labels yet
     plt.xticks(angles[:-1], categories, color='grey', size=10)
 
