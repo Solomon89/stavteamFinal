@@ -16,7 +16,7 @@ def GetGoogleAuth(userid):
     else:
         return None
 def deleteUser(userid):
-    sql = "Delete usergoogle where userid = '" +str(userid)+ "'"
+    sql = "Delete from usergoogle where userid = '" +str(userid)+ "'"
     value = execSQL(sql, True, False)
 
 def GetAuth(unique_id):
