@@ -410,6 +410,9 @@ export default {
 .left-block {
     float: left;
 }
+.right-block {
+    overflow:hidden;
+}
 .pacient .image {
     float: left;
     display: inline-block;
