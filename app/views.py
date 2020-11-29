@@ -47,5 +47,38 @@ from app import googleFit
 
 @app.route('/predict/<string:id>')
 def predict(id):
-    #todo function to predict by id
+    prediction_list = { '54-501-042-01' : [0.9, 0.8, .8, 0, 0],
+		    '54-501-044-010' : [0.7, 0, 0.9, 0, 0],
+		    '54-501-007-01' :[0.9, 0, 0, 0, 0]				
+                  }
+    categories = ['Артериальная гипертензия', 
+                  'ОНМК', 
+                  'Стенокардия, ИБС, инфаркт миокарда',
+                  'Сердечная недостаточность',
+                  'Прочие заболевания сердца']
+
+    N = len(categories)
+    predictions = prediction_list.get(id, default = [0,0,0,0,0])
+    angles = [n / float(N) * 2 * pi for n in range(N)]
+    angles += angles[:1]
+
+    fig, ax = plt.subplot(111, polar=True)
+
+    # Draw one axe per variable + add labels labels yet
+    plt.xticks(angles[:-1], categories, color='grey', size=10)
+
+    predictions += predictions[:1]
+    predictions
+
+    # Draw ylabels
+    ax.set_rlabel_position(0)
+    plt.yticks([0.25,0.50,0.75], ["25%","50%","75%"], color="grey", size=10)
+    plt.ylim(0.01)
+
+    # Plot data
+    ax.plot(angles, predictions, linewidth=2, linestyle='solid')
+
+    # Fill area
+    ax.fill(angles, predictions, 'b', alpha=0.1)
+    plt.show()
     return fig_to_html(fig)
