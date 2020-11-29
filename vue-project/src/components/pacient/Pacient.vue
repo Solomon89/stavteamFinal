@@ -23,7 +23,7 @@
                                 <tr><td colspan="2"><strong>Основные сведения</strong></td><td></td></tr>
                             </thead>
                             <tbody>
-                                <tr><td>Место проживания:</td><td>{{ pacients[pacientId].name }}</td></tr>
+                                <tr><td>Место проживания:</td><td>{{ pacients[pacientId].address }}</td></tr>
                                 <tr><td>Пол:</td><td>{{ pacients[pacientId].gender }}</td></tr>
                                 <tr><td>Семья:</td><td>{{ pacients[pacientId].family }}</td></tr>
                                 <tr><td>Образование:</td><td>{{ pacients[pacientId].education }}</td></tr>
@@ -385,6 +385,14 @@ export default {
     },
     created() {
         this.pacientId = this.$route.params.id - 1;
+
+        axios.get('/auth/' + this.pacientId)
+        .then(function (response) {
+            console.log('google auth: success');
+        })
+        .catch(function (error) {
+            console.log('google auth: fail');
+        });
     }
 }
 </script>
