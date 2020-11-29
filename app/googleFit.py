@@ -78,7 +78,7 @@ def callback():
 
     
     #return '<p>'+User.users_email+'</p><img src="'+User.picture+'" alt="альтернативный текст">'
-    return redirect(url_for("/index"))
+    return redirect(url_for("index"))
 
 @app.route('/myauth/<string:uniq_id>')
 def myauth(uniq_id):
