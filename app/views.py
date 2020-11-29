@@ -8,6 +8,7 @@ from app import forms
 import matplotlib.pyplot as plt
 from mpld3 import fig_to_html, plugins
 import numpy as np
+import math
 
 
 @app.route("/")
@@ -49,9 +50,13 @@ from app import googleFit
 
 @app.route('/predict/<string:id>')
 def predict(id):
-    prediction_list = { '54-501-042-01' : [0.9, 0.8, .8, 0, 0],
-		    '54-501-044-010' : [0.7, 0, 0.9, 0, 0],
-		    '54-501-007-01' :[0.9, 0, 0, 0, 0]				
+    #prediction_list = { '54-501-042-01' : [0.9, 0.8, .8, 0, 0],
+	#	    '54-501-044-010' : [0.7, 0, 0.9, 0, 0],
+	#	    '54-501-007-01' :[0.9, 0, 0, 0, 0]				
+    #              }
+    prediction_list = { 0 : [0.9, 0.8, .8, 0, 0],
+		    1 : [0.7, 0, 0.9, 0, 0],
+		    2 :[0.9, 0, 0, 0, 0]				
                   }
     categories = ['Артериальная гипертензия', 
                   'ОНМК', 
@@ -60,8 +65,8 @@ def predict(id):
                   'Прочие заболевания сердца']
 
     N = len(categories)
-    predictions = prediction_list.get(id, default = [0,0,0,0,0])
-    angles = [n / float(N) * 2 * pi for n in range(N)]
+    predictions = prediction_list.get(id)
+    angles = [n / float(N) * 2 * math.pi for n in range(N)]
     angles += angles[:1]
 
     fig, ax = plt.subplot(111, polar=True)
