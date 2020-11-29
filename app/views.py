@@ -65,7 +65,7 @@ def predict(id):
 
     N = len(categories)
     predictions = prediction_list.get(id)
-    angles = [n / float(N) * 2 * pi for n in range(N)]
+    angles = [n / float(N) * 2 * math.pi for n in range(N)]
     angles += angles[:1]
 
     fig, ax = plt.subplot(111, polar=True)
