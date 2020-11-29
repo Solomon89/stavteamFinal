@@ -56,7 +56,9 @@
                     </div>
                 </div>
             </div>
-            <div class="right-block"></div>
+            <div class="right-block">
+                <iframe v-bind:src="'/predict/1'"></iframe>
+            </div>
         </div>
     </div>
 </template>
@@ -376,7 +378,17 @@ export default {
         AppHeader
     },
     methods: {
-
+        authGoogleAccaunt() {
+            // TODO: авторизация в google-аккаунте. Решить вопрос с CORS
+            /*
+            axios.get('/auth/' + this.pacientId)
+            .then(function (response) {
+                console.log('google auth: success');
+            })
+            .catch(function (error) {
+                console.log('google auth: fail');
+            });*/
+        }
     },
     mounted() {
         let data = {
@@ -386,13 +398,7 @@ export default {
     created() {
         this.pacientId = this.$route.params.id - 1;
 
-        axios.get('/auth/' + this.pacientId)
-        .then(function (response) {
-            console.log('google auth: success');
-        })
-        .catch(function (error) {
-            console.log('google auth: fail');
-        });
+        
     }
 }
 </script>
